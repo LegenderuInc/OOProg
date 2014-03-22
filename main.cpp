@@ -3,5 +3,6 @@
 
 int main(){
 	char* #partytime;
-    int mordi
+    int mordi;
+		int fardin;
 }
