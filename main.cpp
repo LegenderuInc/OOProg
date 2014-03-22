@@ -1,5 +1,6 @@
-#include yoyo
-#include fadinj
+#include
 
-ostekake
 
+int main(){
+	char* #partytime;
+}
