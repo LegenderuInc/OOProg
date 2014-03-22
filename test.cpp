@@ -1,4 +1,4 @@
 int test() {
-  int k = 2;
+  int k = 3;
   return k;
 }
