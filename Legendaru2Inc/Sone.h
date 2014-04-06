@@ -3,10 +3,14 @@
 
 class Sone{
 private:
-   char* beskrivelse;
+   	char* beskrivelse;
+	List* Eiendom;
 
 public:
-
+	Sone();
+	Sone(string fil);
+	void skriv_til_fil(oftream* ut);
+	void display();
 };
 
 #endif
