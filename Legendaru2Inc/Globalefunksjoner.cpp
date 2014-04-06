@@ -25,4 +25,16 @@ char les_inn(char* text){
 	return data;
 }
 
+void lagNavn(char*t, char* s1, char* s2, int n, const int LEN) {
+	char *temp;
+	temp = new char[LEN];
+	itoa(n, temp, 10);
+	strcpy(t, s1);
+	for (int i = 0; i < LEN - sizeof(temp); i++) {
+		strcat(t, "0");
+	}
+	strcat(t, temp);
+	strcat(t, s2);
+}
+
 
