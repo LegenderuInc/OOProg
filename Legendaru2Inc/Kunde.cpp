@@ -32,7 +32,7 @@ Kunde::Kunde(string fil){
 
 }
 
-void Kunde::skriv_til_fil(ofstream& ut){
+void Kunde::skriv_til_fil(ofstream* ut){
 
 	intSone* temp;
 
@@ -45,7 +45,14 @@ void Kunde::skriv_til_fil(ofstream& ut){
 		<< gate_nr << "\n"
 		<< postkode << "\n"
 		
-		int antSoner = (
+		int antSoner = list[list]->no_of_elements();
+	ut* << antSoner << "\n";
+	for(int i = 1; i <= antSoner; i++){
+		temp = (list*) list[list]->remove_no(i);
+		temp->skriv_til_fil();
+		list[list]-> ass(temp)
+	}
+
 
 }
 
