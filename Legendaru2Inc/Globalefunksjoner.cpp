@@ -14,7 +14,7 @@ int les_tall(char* text, int min, int max) {
 	return tall;
 }
 
-char les_inn(char* text){
+char les_text(char* text){
 	char * data;
 	cout << "\n" << text;
 	char temp[STRLEN];
@@ -37,4 +37,18 @@ void lagNavn(char*t, char* s1, char* s2, int n, const int LEN) {
 	strcat(t, s2);
 }
 
+char les_text(ifstream& fil){
+	char* data;
+	char temp[STRLEN];
+	getline(fil, temp);
+	data = new char(strlen(temp)+1);
+	strcpy(data, temp);
+	retun data;
+}
 
+
+int les_tall(ifstream& fil){
+	int tall;
+	getline(fil, tall);
+	return tall;
+}
