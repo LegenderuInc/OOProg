@@ -10,5 +10,5 @@ private:
 private:
 	Kunder();
 	~Kunder();
-		
+	void skriv_til_fil();	
 }

@@ -13,6 +13,7 @@ const int MAX_OPPDRAG = 10000000000;
 const int MIN_OPPDRAG =  10000;
 const int MAX_GATE = 69;
 const int MIN_GATE = 1;
-
+const int STRLEN = 80;
+const int MAXINTR = 100;
 
 #endif

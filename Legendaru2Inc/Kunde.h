@@ -1,6 +1,7 @@
 #include"Globalefunksjoner.h"
 #include<fstream>
 #include "const.h"
+#include"Bokst.h"
 
 using namespace std;
 
@@ -23,8 +24,5 @@ public:
 	void skriv_til-fil(ostream* ut);
 	void display();
 	char get_filnavn();
-
-
-
-
+	
 }

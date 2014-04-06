@@ -4,7 +4,7 @@
 using namespace std;
 
 Kunde::Kunde(){
-
+	FIX
 
 }
 
@@ -46,14 +46,14 @@ void Kunde::skriv_til_fil(ofstream* ut){
 		<< telefon << "\n"
 		<< KundeNr << "\n"
 		<< gate_nr << "\n"
-		<< postkode << "\n"
+		<< postkode << "\n";
 		
-		int antSoner = list[list]->no_of_elements();
+	FIX int antSoner = list[list]->no_of_elements();
 	ut* << antSoner << "\n";
 	for(int i = 1; i <= antSoner; i++){
-		temp = (list*) list[list]->remove_no(i);
-		temp->skriv_til_fil();
-		list[list]-> add(temp);
+		FIX temp = (list*) list[list]->remove_no(i);
+		FIX temp->skriv_til_fil();
+		FIX list[list]-> add(temp);
 	}
 
 
@@ -73,6 +73,12 @@ void Kunde::display(){
 	}
 
 }
+
+char Kunde::get_filnavn() {
+	les_navn(filnavn*, sone, dta, kundeNr, 4);
+	return filnavn;
+}
+
 
 
 

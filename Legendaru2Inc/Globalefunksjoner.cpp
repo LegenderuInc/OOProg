@@ -37,18 +37,18 @@ void lagNavn(char*t, char* s1, char* s2, int n, const int LEN) {
 	strcat(t, s2);
 }
 
-char* les_text(ifstream* fil){
+char* les_text(ifstream* inn){
 	char* data;
 	char temp[STRLEN];
-	fil.getline(temp, STRLEN);
+	inn.getline(temp, STRLEN);
 	data = new char[strlen(temp)+1];
 	strcpy(data, temp);
 	return data;
 }
 
 
-int les_tall(ifstream* fil){
+int les_tall(ifstream* inn){
 	int tall;
-	fil << tall;
+	inn >> tall;
 	return tall;
 }

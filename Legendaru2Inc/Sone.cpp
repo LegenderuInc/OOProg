@@ -7,10 +7,10 @@ Sone::Sone() {
 Sone::Sone(string fil) {
 
 }
-void Sone::skriv_til_fil(ofstram* ut){
+void Sone::skriv_til_fil(ofstream* ut){
 	Eiendom* temp;
 	ut* << number << "\n"
-		<< beskrivelse "\n";
+		<< beskrivelse << "\n";
 
 	int antEiendom = List*[Eiendomer]->no_of_elements();
 	ut* << antEiendom << "\n";
