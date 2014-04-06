@@ -5,6 +5,7 @@ using namespace std;
 
 Kunde::Kunde(){
 
+
 }
 
 Kunde::Kunde(string fil){
@@ -19,6 +20,7 @@ Kunde::Kunde(string fil){
 		filnavn = les_text(infil);
 
 		telefon = les_tall(infil);
+		kundeNR = les_tall(infil);
 		gate_nr = les_tall(infil);
 		postkode = les_tall(infil);
 		intSoner = les_tall(infil);
@@ -42,6 +44,7 @@ void Kunde::skriv_til_fil(ofstream* ut){
 		<< mail << "\n"
 		<< filnavn << "\n"
 		<< telefon << "\n"
+		<< KundeNr << "\n"
 		<< gate_nr << "\n"
 		<< postkode << "\n"
 		
