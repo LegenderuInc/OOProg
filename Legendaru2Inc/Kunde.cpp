@@ -32,6 +32,24 @@ Kunde::Kunde(string fil){
 
 }
 
+void Kunde::skriv_til_fil(ofstream& ut){
+
+	intSone* temp;
+
+	ut* << navn << "\n"
+		<< adresse << "\n"
+		<< poststed << "\n"
+		<< mail << "\n"
+		<< filnavn << "\n"
+		<< telefon << "\n"
+		<< gate_nr << "\n"
+		<< postkode << "\n"
+		
+		int antSoner = (
+
+}
+
+
 void Kunde::display(){
 	cout << "\nKundens navn: " << navn
 		<<"\nKundens filnavn:" << filnavn
