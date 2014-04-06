@@ -1,5 +1,5 @@
-#include'Globalesunksjoner.h'
-#include'Kunde.h'
+#include "Globalefunksjoner.h"
+#include "Kunde.h"
 
 using namespace std;
 

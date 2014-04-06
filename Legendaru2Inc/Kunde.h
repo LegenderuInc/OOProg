@@ -1,4 +1,4 @@
-#include'Globalefunksjoner.h"
+#include "Globalefunksjoner.h"
 #include<fstream>
 #include "const.h"
 
