@@ -1,5 +1,5 @@
-#if !defined(__CONST_H)
-#define __CONST_H
+#if !defined(__const_H)
+#define __const_H
 
 const int MAX_TLF = 99999999;
 const int MIN_TLF = 10000000;

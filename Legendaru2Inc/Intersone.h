@@ -1,5 +1,5 @@
-#if !defined(__INTERSONE_H)
-#define __INTERSONE_H
+#if !defined(__Intersone_H)
+#define __Intersone_H
 
 #include "Enum.h"
 #include "LISTTOOL2.H"

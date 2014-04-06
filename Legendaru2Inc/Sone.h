@@ -1,5 +1,5 @@
-#if !defined(__SONE_H)
-#define __SONE_H
+#if !defined(__Sone_H)
+#define __Sone_H
 
 class Sone{
 private:
