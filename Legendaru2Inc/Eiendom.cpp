@@ -1,1 +1,2 @@
-#include <Eiendom.h>
+#include <iostream>
+#include "Eiendom.h"
