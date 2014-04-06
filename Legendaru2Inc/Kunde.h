@@ -1,11 +1,11 @@
-#include'Globalefunksjoner.h"
+#include"Globalefunksjoner.h"
 #include<fstream>
 #include "const.h"
 
 using namespace std;
 
 
-class Kunde ::  {
+class Kunde: public Num_element  {
 private:
 	int telefon;
 	int kundeNr;

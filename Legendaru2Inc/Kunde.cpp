@@ -50,7 +50,7 @@ void Kunde::skriv_til_fil(ofstream* ut){
 	for(int i = 1; i <= antSoner; i++){
 		temp = (list*) list[list]->remove_no(i);
 		temp->skriv_til_fil();
-		list[list]-> ass(temp)
+		list[list]-> add(temp);
 	}
 
 

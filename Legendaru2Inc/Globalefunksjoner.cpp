@@ -49,6 +49,6 @@ char* les_text(ifstream& fil){
 
 int les_tall(ifstream& fil){
 	int tall;
-	fil.getline(tall, );
+	fil << tall;
 	return tall;
 }
