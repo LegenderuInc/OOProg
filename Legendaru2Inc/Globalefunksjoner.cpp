@@ -19,8 +19,8 @@ char* les_text(char* text){
 	cout << "\n" << text;
 	char temp[STRLEN];
 	cin.ignore();
-	cin.getline(temp, STRELEN);
-	data = new char[strelen(temp)+1];
+	cin.getline(temp, STRLEN);
+	data = new char[strlen(temp)+1];
 	strcpy(data, temp);
 	return data;
 }

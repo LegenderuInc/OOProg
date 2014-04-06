@@ -1,42 +1,53 @@
-#include'Globalesunksjoner.h'
-#include'Kunde.h'
+#include"Globalefunksjoner.cpp"
+#include"const.h"
+#include"Kunde.h"
 
 using namespace std;
 
 Kunde::Kunde(){
-	FIX
+	navn = les_text("navn");
+		adresse = les_text("adresse");
+		poststed = les_text("Sted");
+		mail = les_text("mail");
+		filnavn = les_text("Filnavn");
 
+		telefon = les_tall("tlf", MIN_TLF, MAX_TLF);    
+		kundeNr = les_tall("Kunde nr", MIN_KUNDE, MAX_KUNDE);
+		gateNr = les_tall("Gate nr", MIN_GATE, MAX_GATE);
+		postKode = les_tall("Postadr", MIN_POST, MAX_POST);
+		
 }
 
 Kunde::Kunde(string fil){
+    int antSoner;
 	ifstream infil(fil);
-	if(infile.is_open()){
+	if(infil.is_open()){
 
 		
 		navn = les_text(infil);
 		adresse = les_text(infil);
-		poststed = lest_text(infil);
-		mail = lest_text(infil);
+		poststed = les_text(infil);
+		mail = les_text(infil);
 		filnavn = les_text(infil);
 
 		telefon = les_tall(infil);
-		kundeNR = les_tall(infil);
-		gate_nr = les_tall(infil);
-		postkode = les_tall(infil);
-		intSoner = les_tall(infil);
+		kundeNr = les_tall(infil);
+		gateNr = les_tall(infil);
+		postKode = les_tall(infil);
+		antSoner = les_tall(infil);
 
-		for( int i = 1; i <= intSoner; i++){
-			FIX!
+		/*for( int i = 1; i <= antSoner; i++){
+			FIX!;
 		}
-
+*/
 	}
 
 
 }
 
-void Kunde::skriv_til_fil(ofstream* ut){
+/*void Kunde::skriv_til_fil(ofstream* ut){
 
-	intSone* temp;
+	IntSone* temp;
 
 	ut* << navn << "\n"
 		<< adresse << "\n"
@@ -44,9 +55,9 @@ void Kunde::skriv_til_fil(ofstream* ut){
 		<< mail << "\n"
 		<< filnavn << "\n"
 		<< telefon << "\n"
-		<< KundeNr << "\n"
-		<< gate_nr << "\n"
-		<< postkode << "\n";
+		<< kundeNr << "\n"
+		<< gateNr << "\n"
+		<< postKode << "\n";
 		
 	FIX int antSoner = list[list]->no_of_elements();
 	ut* << antSoner << "\n";
@@ -57,18 +68,18 @@ void Kunde::skriv_til_fil(ofstream* ut){
 	}
 
 
-}
+}*/
 
 
 void Kunde::display(){
 	cout << "\nKundens navn: " << navn
 		<<"\nKundens filnavn:" << filnavn
 		<<"\nTelefon: " << telefon
-		<<"\nAdresse: " << adresse << " " << gate_nr
-		<<"\n \t" << postkode << " " << poststed
+		<<"\nAdresse: " << adresse << " " << gateNr
+		<<"\n \t" << postKode << " " << poststed
 		<<"\nEpost adresse: " << mail;
 
-	for(int i = 1; i <= intSoner; i++){
+	/*for(int i = 1; i <= IntSoner; i++){
 		intsoner[i]->display();
 	}
 
@@ -78,7 +89,7 @@ char Kunde::get_filnavn() {
 	les_navn(filnavn*, sone, dta, kundeNr, 4);
 	return filnavn;
 }
-
+*/
 
 
 

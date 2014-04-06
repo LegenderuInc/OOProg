@@ -1,8 +1,7 @@
-#include<iostream>
+#include"Kunde.cpp"
 
 
 int main(){
-	char* #partytime;
-    int mordi;
-		int fardin;
+	Kunde* temp;
+    temp->display();
 }

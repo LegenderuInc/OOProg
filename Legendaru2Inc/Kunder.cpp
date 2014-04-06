@@ -3,13 +3,13 @@
 using namespace std;
 
 
-void Kunder:skriv_til_fil(ofstream* ut) {
+void Kunder::skriv_til_fil(ofstream* ut) {
 	for(int i = foersteKunde; i < sisteKunde; i++) {
 		char* filnavn;
-		les_navn(filnavn, sone, dta, i, 4);
+		les_navn(filnavn, k, dta, i, 7);
 		ofstream utfil(filnavn);
 		if(utfil.is_open()){
-			kunde->skriv_til_fil(utfil*);
+			Kunde->skriv_til_fil(utfil*);
 		}
 
 	}

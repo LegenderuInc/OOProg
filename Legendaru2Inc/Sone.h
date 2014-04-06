@@ -4,12 +4,12 @@
 class Sone{
 private:
    	char* beskrivelse;
-	List* Eiendom;
-
+	List* Eiendom[MAXDRITT];
+    
 public:
 	Sone();
-	Sone(string fil);
-	void skriv_til_fil(oftream* ut);
+	Sone(char* filnavn);
+	void skriv_til_fil(ofstream* ut);
 	void display();
 };
 

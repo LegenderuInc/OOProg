@@ -1,4 +1,6 @@
-#include"kunde.cpp"
+#include"Globalefunksjoner.cpp"
+#include"const.h"
+#include"Bokst.h"
 
 using namespace std;
 

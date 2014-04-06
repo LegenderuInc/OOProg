@@ -1,2 +1,1 @@
-#include <Bolig.h>
-asd
+#include "Bolig.h"

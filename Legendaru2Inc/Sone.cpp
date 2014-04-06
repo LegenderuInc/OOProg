@@ -16,9 +16,9 @@ void Sone::skriv_til_fil(ofstream* ut){
 	ut* << antEiendom << "\n";
 
 	for(int i = 1; i <= antEiendom; i++) {
-		FIX temp = (list*) blabla(blabla)->remove_no(i);
-		FIX temp->skriv_til_fil();
-		FIX bla(bla)->add(temp);
+		temp = (list*) blabla(blabla)->remove_no(i);
+		temp->skriv_til_fil();
+		bla(bla)->add(temp);
 	}
 
 }

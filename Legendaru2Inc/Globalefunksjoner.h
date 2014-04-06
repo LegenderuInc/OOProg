@@ -12,3 +12,4 @@ void lagNavn(char*t, char* s1, char* s2, int n, const int LEN)  // Lager navn i 
 
 
 
+#endif
