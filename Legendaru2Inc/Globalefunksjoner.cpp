@@ -160,7 +160,7 @@ void KundeMeny {
     
     while (kommando != 'Q') {
         switch (kommando){
-            case 'D':
+            case 'D': display_kunde();
                 break;
             case 'N':
                 break;
