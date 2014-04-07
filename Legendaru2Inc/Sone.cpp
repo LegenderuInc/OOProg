@@ -7,6 +7,12 @@ Sone::Sone() {
 
 }
 Sone::Sone(ifstream & inn) {
+    beskrivelse = les_text(inn);
+    antEiendom = les_tall(inn);
+    
+    for(int i = 1; i <= antEiendom; i++){
+        eiendomlist[i] -> new Eiendom(inn);
+    }
 
 }
 void Sone::skriv_til_fil(ofstream* ut){

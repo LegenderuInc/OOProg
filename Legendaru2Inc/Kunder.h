@@ -6,12 +6,12 @@ using namespace std;
 
 class Kunder {
 private:
-    K;
-	extern int forsteKunde;
+    extern int forsteKunde;
 	extern int sistInnlagt;
-	List* Kunde;
+	List* kundelist;
 private:
 	Kunder();
 	~Kunder();
-	void skriv_til_fil();	
+	void skriv_til_fil();
+    void les_fra_fil(ifstream* inn, int i)	;
 };

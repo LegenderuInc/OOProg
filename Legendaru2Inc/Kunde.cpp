@@ -9,21 +9,19 @@ Kunde::Kunde(){
 		adresse = les_text("adresse");
 		poststed = les_text("Sted");
 		mail = les_text("mail");
-		filnavn = les_text("Filnavn");
-
+		
 		telefon = les_tall("tlf", MIN_TLF, MAX_TLF);    
 		kundeNr = les_tall("Kunde nr", MIN_KUNDE, MAX_KUNDE);
 		gateNr = les_tall("Gate nr", MIN_GATE, MAX_GATE);
 		postKode = les_tall("Postadr", MIN_POST, MAX_POST);
+        
+        lagNavn(filnavn, k, dta, kundeNr, 7);
 		
 }
 
-Kunde::Kunde(char* filnavn){
+Kunde::Kunde(ifstream* infil){
     int antSoner;
-	ifstream infil(filnavn);
-	if(infil.is_open()){
-
-		
+	
 		navn = les_text(infil);
 		adresse = les_text(infil);
 		poststed = les_text(infil);
@@ -36,14 +34,14 @@ Kunde::Kunde(char* filnavn){
 		postKode = les_tall(infil);
 		antSoner = les_tall(infil);
 
-		/*for( int i = 1; i <= antSoner; i++){
-			FIX!;
+		for( int i = 1; i <= antSoner; i++){
+			intrSoneList[i] -> new intrSone(infil);
 		}
-*/
+
 	}
 
 
-}
+
 
 /*void Kunde::skriv_til_fil(ofstream* ut){
 

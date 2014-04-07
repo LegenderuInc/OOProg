@@ -15,3 +15,6 @@ void Kunder::skriv_til_fil(ofstream* ut) {
 	}
 
 }
+void Kunder::les_fra_fil(ifstream* inn, int i){
+    kundelist[i]-> new Kunde(inn)
+}

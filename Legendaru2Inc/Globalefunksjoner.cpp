@@ -1,5 +1,7 @@
 #include "Globalefunksjoner.h"
 #include "Bokst.h"
+#include "Kunde.h"
+#include "Kunder.h"
 
 
 int les_tall(char* text, int min, int max) {
@@ -86,7 +88,16 @@ void les_fra_fil() {
         ifstream innfil(navn);
         
         if(innfil.is_open()){
-            sone->les_fra_fil(i, innfil);
+            sonelist->les_fra_fil(innfil, i);
+        }
+    }
+    for(int j = foersteKunde; j <= sisteInnlagt; j++){
+        navn = new char[(strlen(k) + strlen(dta) + 7 + 1)];
+        lagNavn(navn, k, dta, j, 7);
+        ifstream innkunde(navn);
+        
+        if(innkunde.is_open()){
+            kundelist->les_fra_fil(innkunde, j);
         }
     }
    

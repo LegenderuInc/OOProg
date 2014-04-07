@@ -5,7 +5,7 @@ using namespace std;
 
 class Soner {
 private:
-    Sone* sone[MAX_SONE];
+    Sone* sonerlist[MAX_SONE];
 public:
     void les_fra_fil(ifstream* inn, int n);
 };
