@@ -1,30 +1,28 @@
-#include "Globalefunksjoner.h"
+#include"Globalefunksjoner.h"
 #include<fstream>
 #include "const.h"
+#include"Bokst.h"
 
 using namespace std;
 
 
-class Kunde ::  {
+class Kunde: public Num_element  {
 private:
 	int telefon;
 	int kundeNr;
-	int post_nr;
-	int gate_nr;
+	int postKode;
+	int gateNr;
+        char* filnavn;
 	char* navn;
 	char* adresse;
 	char* poststed;
 	char* mail;
-	List* intSone[FIX];
+	List* intSone[MAXINTR];
 public:
 	Kunde();
-	Kunde (string fil);
+	Kunde (char* filnavn);
 	~Kunde();
-	void skriv_til-fil(ostream* ut);
+	void skriv_til_fil(ostream* ut);
 	void display();
-	char get_filnavn();
-
-
-
-
-}
+		
+};
