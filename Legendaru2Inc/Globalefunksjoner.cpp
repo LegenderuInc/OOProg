@@ -137,8 +137,16 @@ void getSisteInfo(){
     if (sistefil.is_open()){
         sistefil >> sisteEiendom;
         sistefil >> foersteKunde;
-        sistefil >> sisteInnlagt;
+        sistefil >> sistInnlagt;
     }
+}
+
+void skrivSiste(){
+    ofstream utfil ("SISTE.DTA");
+    
+    utfil << sisteEiendom << "\n"
+            << foersteKunde << "\n"
+            << sistInnlagt << "\n";
 }
 
 /*void SoneMeny {

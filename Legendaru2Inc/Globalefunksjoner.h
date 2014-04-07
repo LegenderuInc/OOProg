@@ -23,7 +23,9 @@ void EiendomMeny();
 void SoneMeny();
 void Kundemeny();
 void getSisteInfo();
+void skrivSiste();
 char lesK();
+
 EiendomsType les_eiendomstype();
 
 
