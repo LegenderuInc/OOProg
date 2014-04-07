@@ -18,9 +18,9 @@ Kunde::Kunde(){
 		
 }
 
-Kunde::Kunde(string fil){
+Kunde::Kunde(char* filnavn){
     int antSoner;
-	ifstream infil(fil);
+	ifstream infil(filnavn);
 	if(infil.is_open()){
 
 		
