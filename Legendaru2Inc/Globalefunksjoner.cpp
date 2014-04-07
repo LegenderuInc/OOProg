@@ -1,4 +1,5 @@
 #include "Globalefunksjoner.h"
+#include "Bokst.h"
 
 
 int les_tall(char* text, int min, int max) {
@@ -22,7 +23,7 @@ char* les_text(char* text){
 	char temp[STRLEN];
 	cin.ignore();
 	cin.getline(temp, STRLEN);
-
+}
 char* les_text(char* text){
 	char * data;
 	cout << text;
@@ -65,3 +66,24 @@ int les_tall(ifstream* inn){
 }
 
 
+void les_fra_fil() {
+    char* navn;
+    ifstream sistefil("SISTE.DTA");
+    
+    if (sistefil.is_open()){
+        sistefil >> sisteEiendom;
+        sistefil >> foersteKunde;
+        sistefil >> sisteInnlagt;
+    }
+    
+    for(int i = 1; i <= MAX_SONE; i++) {
+        navn = new char[(strlen(sone)+strlen(dta) + 3 + 1)];
+        lagNavn(navn, sone, dta, i, 3);
+        ifstream innfil(navn);
+        
+        if(innfil.is_open()){
+            sone->les_fra_fil(i, innfil);
+        }
+    }
+   
+}

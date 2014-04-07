@@ -1,4 +1,4 @@
-#include"Globalefunksjoner.cpp"
+#include"Globalefunksjoner.h"
 #include"const.h"
 #include"Kunde.h"
 

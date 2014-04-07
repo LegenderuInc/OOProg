@@ -7,8 +7,8 @@ using namespace std;
 class Kunder {
 private:
     K;
-	int forsteKunde;
-	int sistInnlagt;
+	extern int forsteKunde;
+	extern int sistInnlagt;
 	List* Kunde;
 private:
 	Kunder();
