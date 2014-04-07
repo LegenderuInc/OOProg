@@ -19,6 +19,9 @@ char* les_text(ifstream* inn);
 void lagNavn(char*t, char* s1, char* s2, int n, const int LEN);  // Lager navn i t.
 void les_fra_fil();
 void skrivMeny();
+void EiendomMeny();
+void SoneMeny();
+void Kundemeny();
 char lesK();
 EiendomsType les_eiendomstype();
 
