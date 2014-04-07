@@ -108,7 +108,7 @@ void skrivMeny() {
     cout << "\n\n\tTilgjengelige kommandoer:";
     cout << "\n\n\tE D <oppdnr> | <pnr> Eiendom Display"
             << " <oppdragsnr> eller <postnr>";
-    cour << "\nt E N <sonenr> Eiendom Ny <Sonenummer>";
+    cout << "\nt E N <sonenr> Eiendom Ny <Sonenummer>";
     cout << "\n\tE S <oppdnr> Eiendom Slett <Oppdragsnr>";
     cout << "\n\tE E <oppdnr> Eiendom Endre <oppdragsnr>";
     cout << "\n\tS D <sonenr> Sone Display <sonenr>";
