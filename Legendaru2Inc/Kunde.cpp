@@ -78,6 +78,7 @@ void Kunde::display(){
 		<<"\nAdresse: " << adresse << " " << gateNr
 		<<"\n \t" << postKode << " " << poststed
 		<<"\nEpost adresse: " << mail;
+}
 
 	/*for(int i = 1; i <= IntSoner; i++){
 		intsoner[i]->display();

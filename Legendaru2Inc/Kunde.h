@@ -20,10 +20,9 @@ private:
 	List* intSone[MAXINTR];
 public:
 	Kunde();
-	Kunde (string fil);
+	Kunde (char* filnavn);
 	~Kunde();
 	void skriv_til_fil(ostream* ut);
 	void display();
-	char get_filnavn();
-	
+		
 };

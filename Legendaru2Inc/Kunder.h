@@ -6,6 +6,7 @@ using namespace std;
 
 class Kunder {
 private:
+    K;
 	int forsteKunde;
 	int sistInnlagt;
 	List* Kunde;
