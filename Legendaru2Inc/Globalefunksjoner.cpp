@@ -135,3 +135,62 @@ EiendomsType les_eiendomstype() {
 	}
 	return EiendomsType;
 }
+
+/*void SoneMeny {
+    char kommando;
+    
+    kommando = lesK();
+    
+    while (kommando != 'Q') {
+        switch (kommando) {
+        switch (kommando){
+            case 'D' : cout << "D";
+                break;
+            default:
+                break;
+        }
+        break;
+    }
+}
+
+void KundeMeny {
+    char kommando;
+    
+    kommando = lesK();
+    
+    while (kommando != 'Q') {
+        switch (kommando){
+            case 'D':
+                break;
+            case 'N':
+                break;
+            case 'S':
+                break;
+            case 'E':
+                break;
+            default:
+                break;
+        }
+    }
+}
+
+void EiendomMeny {
+    char kommando;
+    
+    kommando = lesK();
+    DNSE
+    while (kommando != 'Q') {
+        switch (kommando) {
+            case 'D': display_eiendom();
+                break;
+            case 'N':
+                break;
+            case 'S':
+                break;
+            case 'E':
+                break;
+            default:
+                break;
+        }
+    }
+}/*

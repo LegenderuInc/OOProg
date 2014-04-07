@@ -20,11 +20,11 @@ int main() {
     
     while (kommando != 'Q') {
         switch (kommando) {
-            case 'E':
+            case 'E': EiendomMeny();
                 break;
-            case 'S':
+            case 'S': SoneMeny();
                 break;
-            case 'K':
+            case 'K': KundeMeny();
                 break;
             case 'U':
                 break;
