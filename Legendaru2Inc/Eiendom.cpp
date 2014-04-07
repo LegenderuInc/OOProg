@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Eiendom.h"
 
 Eiendom::Eiendom() {
@@ -9,15 +10,14 @@ Eiendom::Eiendom(ifstream* innFil, int n) : Num_element(n) {
 	*innFil >> datoInn;
 	*innFil >> bruksNr;
 	*innFil >> intsaksb;
+	*innFil >> arealTomt; 
+	*innFil >> pris;
 	innFil->ignore();
-	innFil->clear();
-	*innFil >> eier;
-	//innFil >> kommune;
-	//innFil >> postAdr;
-	//innFil >> gateAdr;
-	//innFil >> arealTomt;
-	//innFil >> pris;
-	//innFil >> beskrivelse;
+	eier = les_text(innFil);
+	kommune = les_text(innFil);
+	postAdr = les_text(innFil);
+	gateAdr = les_text(innFil);
+	beskrivelse = les_text(innFil);
 }
 
 Eiendom::Eiendom(int n) : Num_element(n) {
@@ -53,13 +53,13 @@ void Eiendom::skirv_til_fil(ofstream* utFil) {
 	*utFil << datoInn << endl;
 	*utFil << bruksNr << endl;
 	*utFil << intsaksb << endl;
+	*utFil << arealTomt << endl;
+	*utFil << pris << endl;
 	*utFil << eier << endl;
-	//utFil << kommune << endl;
-	//utFil << postAdr << endl;
-	//utFil << gateAdr << endl;
-	//utFil << arealTomt << endl;
-	//utFil << pris << endl;
-	//utFil << beskrivelse << endl;
+	*utFil << kommune << endl;
+	*utFil << postAdr << endl;
+	*utFil << gateAdr << endl;
+	*utFil << beskrivelse << endl;
 }
 
 Eiendom::~Eiendom() {
