@@ -87,3 +87,21 @@ void les_fra_fil() {
     }
    
 }
+
+void skrivMeny() {
+    cout << "\n\t\tMenyvalg:";
+    cout << "\n\n\tTilgjengelige kommandoer:";
+    cout << "\n\n\tE D <oppdnr> | <pnr> Eiendom Display"
+            << " <oppdragsnr> eller <postnr>";
+    cour << "\nt E N <sonenr> Eiendom Ny <Sonenummer>";
+    cout << "\n\tE S <oppdnr> Eiendom Slett <Oppdragsnr>";
+    cout << "\n\tE E <oppdnr> Eiendom Endre <oppdragsnr>";
+    cout << "\n\tS D <sonenr> Sone Display <sonenr>";
+    cout << "\n\tK D <knr> | <knavn> Kunde Display"
+           << " <kundenr> eller <kundenavn>";
+    cout << "\n\tK N Kunde Ny";
+    cout << "\n\tK S <knr> Kunde Slett <kundenr>";
+    cout << "\n\tK E <knr> Kunde Endre <kundenr>";
+    cout << "\n\tU Ukentlig utskrift/status/sending";
+            
+}
