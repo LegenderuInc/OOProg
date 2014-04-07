@@ -69,7 +69,7 @@ Kunde::Kunde(ifstream* infil){
 }*/
 
 
-void Kunde::display(){
+void Kunde::display_kunde(){
 	cout << "\nKundens navn: " << navn
 		<<"\nKundens filnavn:" << filnavn
 		<<"\nTelefon: " << telefon
