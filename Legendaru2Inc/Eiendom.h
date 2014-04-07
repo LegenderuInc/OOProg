@@ -1,22 +1,31 @@
 #if !defined(__EIENDOM_H)
 #define __EIENDOM_H
-#include <iostream>
-#include <fstream>
-#include "listtool2.h"
-
+#include "Globalefunksjoner.h"
 
 class Eiendom : public Num_element {
 	private:
-		int datoInn, bruksNr, saksb, pris, tomta;
-		char* gateadr, * postadr, * eier, * kommune, * beskrivelse;
+		int datoInn;		// Dato for når oppdraget ble registrert.
+		int oppdragsNr;		// Oppdragsnummer.
+		int intsaksb;		// Nummer for intern saksbehandler.
+		int bruksNr;		// Bruksnummer.
+		int pris;			// Eiendomens/boligens pris.
+		int arealTomt;		// Areal på tometen.
+		char* kommune;		// Kommunen tomen ligger i.
+		char* postAdr;		// Postadresse og std.
+		char* gateAdr;		// Gateadresse.
+		char* eier;			// Tomtens nåværende eier.
+		char* beskrivelse;	// En kort bekrivelse av tomten/boligen.
 
 	public:
-		Eiendom();
-		Eiendom(ifstream & inn, int type, int i);
-		Eiendom(int n);
-		~Eiendom();
+		Eiendom();			// Default konstruktor
+		Eiendom(int n);		// Konstruktor som tar oppdragsnummer som parameter.
+		Eiendom(ifstream* innFil, int n);	// Konstuktor som brukes dersom det leses fra fil.
 		virtual void display();
-		void display_e();
+		void display_eiendom();	// Skriver ut informasjon om tomten.
+		void skirv_til_fil(ofstream* utFil);
+		
+		~Eiendom();			// Destructor.
+
 
 };
 
