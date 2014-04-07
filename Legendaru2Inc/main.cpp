@@ -16,7 +16,7 @@ int main() {
 
     char kommando;
     skrivMeny();
-    kommando = ;
+    kommando = lesK();
     
     while (kommando != 'Q') {
         switch (kommando) {
@@ -31,7 +31,7 @@ int main() {
             default:    skrivMeny();
                 break;
         }
-        kommando = ;
+        kommando = lesK();
     }
     return 0;
 }
