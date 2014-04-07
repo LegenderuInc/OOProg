@@ -3,16 +3,19 @@
 
 #include "Enum.h"
 #include "LISTTOOL2.H"
+#include<fstream>
 
 class InterSone : Num_element {
 private:
    int soneNr, maxPris, minAreal, minRom;
-   enum Boliginfo;
-   enum Onske;
-   enum Eiendomstype;
+   Boliginfo boliginfo;
+   Onske oenske;
+   EiendomsType type;
 
 public:
-   
+    InterSone();
+    InterSone(ifstream* inn);
+    void skriv_til_fil(ofstream* ut);
 
 };
 

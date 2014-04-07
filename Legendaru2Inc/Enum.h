@@ -1,7 +1,7 @@
 #if !defined(__Enum_h)
 #define  __Enum_h
 
-enum Eiendomstype {tomt, enebolig, rekkehus, leilighet, hytte};
+enum EiendomsType {tomt, enebolig, rekkehus, leilighet, hytte};
 enum Onske {salg, leie, begge};
 enum Boliginfo {ukentlig, snarest};
 
