@@ -12,7 +12,7 @@ using namespace std;
 
 
 
-int les_tall(char*, int, int);	
+int les_tall(char* text, int min, int max);	
 int les_tall(ifstream* inn);        // returnerer ett heltall
 char* les_text(char* text);			// returerer text input
 char* les_text(ifstream* inn);
@@ -22,6 +22,7 @@ void skrivMeny();
 void EiendomMeny();
 void SoneMeny();
 void Kundemeny();
+void getSisteInfo();
 char lesK();
 EiendomsType les_eiendomstype();
 

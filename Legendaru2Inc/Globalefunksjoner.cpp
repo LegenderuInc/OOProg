@@ -74,13 +74,8 @@ int les_tall(ifstream* inn){
 
 void les_fra_fil() {
     char* navn;
-    ifstream sistefil("SISTE.DTA");
     
-    if (sistefil.is_open()){
-        sistefil >> sisteEiendom;
-        sistefil >> foersteKunde;
-        sistefil >> sisteInnlagt;
-    }
+    getSisteInfo();
     
     for(int i = 1; i <= MAX_SONE; i++) {
         navn = new char[(strlen(sone)+strlen(dta) + 3 + 1)];
@@ -134,6 +129,16 @@ EiendomsType les_eiendomstype() {
 	default: valg = les_tall("\nBoligtype:\n1 - tomt\n2 - enebolig\n3 - rekkehus\n4 - leilighet\n5 - hytte\n: ", 1, 5); break;
 	}
 	return EiendomsType;
+}
+
+void getSisteInfo(){
+    ifstream sistefil ("SISTE.DTA");
+    
+    if (sistefil.is_open()){
+        sistefil >> sisteEiendom;
+        sistefil >> foersteKunde;
+        sistefil >> sisteInnlagt;
+    }
 }
 
 /*void SoneMeny {

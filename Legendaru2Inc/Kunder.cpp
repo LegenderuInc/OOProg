@@ -4,6 +4,7 @@ using namespace std;
 
 
 void Kunder::skriv_til_fil(ofstream* ut) {
+    getSisteInfo();
 	for(int i = foersteKunde; i < sistInnlagt; i++) {
 		char* filnavn;
 		lagNavn(filnavn, k, dta, i, 7);
