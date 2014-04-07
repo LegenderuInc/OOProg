@@ -51,7 +51,7 @@ void lagNavn(char*t, char* s1, char* s2, int n, const int LEN) {
 char* les_text(ifstream* inn){
 	char* data;
 	char temp[STRLEN];
-	inn.getline(temp, STRLEN);
+	inn->getline(temp, STRLEN);
 	data = new char[strlen(temp)+1];
 	strcpy(data, temp);
 	return data;
