@@ -2,9 +2,11 @@
 #define __SONE_H
 #include<fstream>
 
+
 class Sone{
 private:
    	char* beskrivelse;
+
 	Eiendom* eiendomene[MAXDRITT];
     
 public:

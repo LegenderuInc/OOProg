@@ -33,6 +33,7 @@ Eiendom::Eiendom(int n) : Num_element(n) {
 	arealTomt = les_tall("Areal: ", 0, 10000000);
 	pris = les_tall("Pris: ", 0, 100000000);
 	beskrivelse = les_text("Kort beskrivelse: ");
+	skriv_til_fil();
 }
 
 void Eiendom::display_eiendom() {
@@ -48,7 +49,10 @@ void Eiendom::display() {
 	return;
 }
 
-void Eiendom::skirv_til_fil(ofstream* utFil) {
+void Eiendom::skriv_til_fil() {
+	char* filNavn = new char[50];
+	lagNavn(filNavn, "E", ".DTA", oppdragsNr, 7);
+	ofstream *utFil = new ofstream(filNavn);
 	*utFil << oppdragsNr << endl;
 	*utFil << datoInn << endl;
 	*utFil << bruksNr << endl;
