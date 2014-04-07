@@ -7,9 +7,9 @@
 class InterSone : Num_element {
 private:
    int soneNr, maxPris, minAreal, minRom;
-   enum boligInfo;
-   enum interesse;
-   enum type;
+   enum Boliginfo;
+   enum Onske;
+   enum Eiendomstype;
 
 public:
    
