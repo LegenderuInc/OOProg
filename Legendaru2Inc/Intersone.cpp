@@ -7,33 +7,41 @@
 
 using namespace std;
 InterSone::InterSone(){
-    soneNr = les_tall("\nVennligst oppgi følgende informasjon:\n Sone Nummer: ", MIN_SONE, MAX_SONE);
-    maxPris = les_tall("\nMax pris: ", MIN_ALL, MAX_PRIS);
-    minAreal = les_tall("\nMinimal med ønske areal: ", MIN_ALL, MAX_AREAL);
-    minRom = les_tall("\nMinst antall ønsket soverom: ", MIN_ALL, MAX_SOVE);
-    boliginfo = EINARSMAGISKEFORMEL!!;
-    oenske = EINARSMAGISKEFORMEL!!;
-    type = EINARSMAGISKEFORMEL!!;
+   
 }
 
-InterSone::InterSone(ifstream* inn){
-    boliginfo = les_tall(inn);
-    oenske = les_tall(inn);
-    type = les_tall(inn);
-    soneNr = les_tall(inn);
+InterSone::InterSone(int sonenr, int pris, int areal, int sove, int valg, int onske, int eiendom) : Num_element(sonenr){
+    maxPris = pris;
+    minAreal = areal;
+    minRom = sove;
+    boliginfo = (Boliginfo)valg;
+    oenske = (Onske)onske;
+    type = (EiendomsType)eiendom;
+}
+
+InterSone::InterSone(ifstream* inn, int i) : Num_element(i){
+    int temp;
+    temp = les_tall(inn);
+    boliginfo = (Boliginfo)temp;
+    temp = les_tall(inn);
+    oenske = (Onske)temp;
+    temp = les_tall(inn);
+    type = (EiendomsType)temp;
     maxPris = les_tall(inn);
     minAreal = les_tall(inn);
     minRom = les_tall(inn);
 }
 
+InterSone::~InterSone(){
+    
+}
+
 void InterSone::skriv_til_fil(ofstream* ut){
-    if(ut.is_open()){
-    *ut << boliginfo << "\n"
-        << oenske << "\n"
+        *ut << number << "\n"
+            << boliginfo << "\n"
+            << oenske << "\n"
             << type << "\n"
-            << soneNr << "\n"
             << maxPris << "\n"
             << minAreal << "\n"
             << minRom << "\n";
-    }
 }

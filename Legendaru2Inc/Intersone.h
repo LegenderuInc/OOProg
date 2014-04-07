@@ -5,16 +5,18 @@
 #include "LISTTOOL2.H"
 #include<fstream>
 
-class InterSone : Num_element {
+class InterSone: public Num_element {
 private:
-   int soneNr, maxPris, minAreal, minRom;
+   int maxPris, minAreal, minRom;
    Boliginfo boliginfo;
    Onske oenske;
    EiendomsType type;
 
 public:
     InterSone();
-    InterSone(ifstream* inn);
+    InterSone(int sonenr, int pris, int areal, int sove, int valg, int onske, int eiendom);
+    InterSone(ifstream* inn, int i);
+    ~InterSone();
     void skriv_til_fil(ofstream* ut);
 
 };

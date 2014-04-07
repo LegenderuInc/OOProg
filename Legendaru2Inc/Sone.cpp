@@ -11,7 +11,7 @@ Sone::Sone(ifstream & inn) {
     antEiendom = les_tall(inn);
     
     for(int i = 1; i <= antEiendom; i++){
-        eiendomlist[i] -> new Eiendom(inn);
+        eiendomlist -> new Eiendom(inn);
     }
 
 }
