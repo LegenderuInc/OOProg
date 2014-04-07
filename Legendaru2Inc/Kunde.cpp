@@ -19,23 +19,25 @@ Kunde::Kunde(){
 		
 }
 
-Kunde::Kunde(ifstream* infil){
-    int antSoner;
+Kunde::Kunde(ifstream* infil, int nr): Num_element(nr){
+    int antSoner, soneNumb;
 	
 		navn = les_text(infil);
 		adresse = les_text(infil);
 		poststed = les_text(infil);
 		mail = les_text(infil);
-		filnavn = les_text(infil);
-
+		
 		telefon = les_tall(infil);
-		kundeNr = les_tall(infil);
 		gateNr = les_tall(infil);
 		postKode = les_tall(infil);
 		antSoner = les_tall(infil);
 
 		for( int i = 1; i <= antSoner; i++){
-			intrSoneList[i] -> new intrSone(infil);
+            InterSone* temp;
+            infil >> soneNumb;
+            temp = new InterSone(infil, soneNumb);
+            intSone->add(temp);
+            delete temp;
 		}
 
 	}
