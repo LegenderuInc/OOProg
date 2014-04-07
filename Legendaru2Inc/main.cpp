@@ -4,9 +4,16 @@ using namespace std;
 
 #include "const.h"
 #include "Globalefunksjoner.h"
+#include "Eiendom.h"
+#include "Soner.h
+
+Soner* soner;
+Kunder* kunder
 
 int main() {
-    
+	soner = new Soner();
+    kunder = new Kunder();
+
     char kommando;
     skrivMeny();
     kommando = ;
