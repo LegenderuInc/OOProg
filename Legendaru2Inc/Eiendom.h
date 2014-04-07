@@ -22,7 +22,7 @@ class Eiendom : public Num_element {
 		Eiendom(ifstream* innFil, int n);	// Konstuktor som brukes dersom det leses fra fil.
 		virtual void display();
 		void display_eiendom();	// Skriver ut informasjon om tomten.
-		void skirv_til_fil(ofstream* utFil);
+		void skriv_til_fil();
 		
 		~Eiendom();			// Destructor.
 
