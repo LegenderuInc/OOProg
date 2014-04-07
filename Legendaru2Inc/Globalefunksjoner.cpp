@@ -14,6 +14,7 @@ int les_tall(char* text, int min, int max) {
 	return tall;
 }
 
+
 char* les_text(char* text){
 	char * data;
 	cout << "\n" << text;
@@ -52,3 +53,4 @@ int les_tall(ifstream* inn){
 	inn >> tall;
 	return tall;
 }
+
