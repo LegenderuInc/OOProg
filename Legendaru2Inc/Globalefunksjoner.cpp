@@ -181,7 +181,7 @@ void EiendomMeny {
     DNSE
     while (kommando != 'Q') {
         switch (kommando) {
-            case 'D':
+            case 'D': display_eiendom();
                 break;
             case 'N':
                 break;
