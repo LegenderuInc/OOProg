@@ -3,7 +3,7 @@
 
 int les_tall(char* text, int min, int max) {
 	int tall;
-	cout << text << ": ";
+	cout << text;
 	cin >> tall;
 	while (tall < min || tall > max || (!cin.good())) {
 		cin.clear();
@@ -15,16 +15,26 @@ int les_tall(char* text, int min, int max) {
 }
 
 
+
 char* les_text(char* text){
 	char * data;
 	cout << "\n" << text;
 	char temp[STRLEN];
 	cin.ignore();
 	cin.getline(temp, STRLEN);
+
+char* les_text(char* text){
+	char * data;
+	cout << text;
+	char temp[50];
+	cin.ignore();
+	cin.getline(temp, 50);
+
 	data = new char[strlen(temp)+1];
 	strcpy(data, temp);
 	return data;
 }
+
 
 void lagNavn(char*t, char* s1, char* s2, int n, const int LEN) {
 	char *temp;
@@ -53,4 +63,5 @@ int les_tall(ifstream* inn){
 	inn >> tall;
 	return tall;
 }
+
 
