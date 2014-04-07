@@ -15,7 +15,11 @@ int les_tall(char* text, int min, int max) {
 	return tall;
 }
 
-
+char lesK(){
+    char k;
+    cin >> k; cin.ignore();
+    return (toupper(k));
+}
 
 char* les_text(char* text){
 	char * data;
