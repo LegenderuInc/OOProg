@@ -1,6 +1,6 @@
 #if !defined(__SONE_H)
 #define __SONE_H
-#include<fstream>
+
 
 
 class Sone{

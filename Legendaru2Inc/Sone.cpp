@@ -1,10 +1,12 @@
 #include <iostream>
+#include<fstream>
+#include"Eiendom.h"
 #include "Sone.h"
 
 Sone::Sone() {
 
 }
-Sone::Sone(string fil) {
+Sone::Sone(ifstream & inn) {
 
 }
 void Sone::skriv_til_fil(ofstream* ut){
