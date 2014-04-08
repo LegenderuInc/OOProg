@@ -104,6 +104,30 @@ void skrivMeny() {
 
 }
 
+void skrivMeny_Kunde() {
+    cout << "\n\n\t\tKunde";
+    cout << "\n\tD - Display en kunde";
+    cout << "\n\tN - Opprett en ny kunde";
+    cout << "\n\tS - Slett en kunde";
+    cout << "\n\tE - Endre en kunde";
+    cout << "\n\tQ - Avslutt\n";
+}
+
+void skrivMeny_Eiendom() {
+    cout << "\n\n\t\tKunde";
+    cout << "\n\tD - Display en Eiendom";
+    cout << "\n\tN - Opprett en ny Eiendom";
+    cout << "\n\tS - Slett en Eiendom";
+    cout << "\n\tE - Endre en Eiendom";
+    cout << "\n\tQ - Avslutt\n";
+}
+
+void skrivMeny_Sone() {
+    cout << "\n\n\t\tSone";
+    cout << "\n\tD - Display Sone";
+    cout << "\n\tQ - Avslutt";
+}
+
 EiendomsType les_eiendomstype() {
     EiendomsType eiendomsType;
     int valg = les_tall("\nBoligtype:\n1 - tomt\n2 - enebolig\n3 - rekkehus\n4 - leilighet\n5 - hytte\n: ", 1, 5);
@@ -143,9 +167,9 @@ void skrivSiste() {
             << sistInnlagt << "\n";
 }
 
-/*void SoneMeny {
+void SoneMeny {
     char kommando;
-    
+    skrivMeny_Sone();
     kommando = lesK();
     
     while (kommando != 'Q') {
@@ -162,7 +186,7 @@ void skrivSiste() {
 
 void KundeMeny {
     char kommando;
-    
+    skrivMeny_Kunde();
     kommando = lesK();
     
     while (kommando != 'Q') {
@@ -183,7 +207,7 @@ void KundeMeny {
 
 void EiendomMeny {
     char kommando;
-    
+    skrivMeny_Eiendom();
     kommando = lesK();
     DNSE
     while (kommando != 'Q') {
@@ -200,5 +224,5 @@ void EiendomMeny {
                 break;
         }
     }
-}/*
+}
  
