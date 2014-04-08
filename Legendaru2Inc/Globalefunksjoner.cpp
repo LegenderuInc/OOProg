@@ -125,7 +125,7 @@ void skrivMeny_Eiendom() {
 void skrivMeny_Sone() {
     cout << "\n\n\t\tSone";
     cout << "\n\tD - Display Sone";
-    cout << "\n\tQ - Avslutt";
+    cout << "\n\tQ - Avslutt\n";
 }
 
 EiendomsType les_eiendomstype() {
