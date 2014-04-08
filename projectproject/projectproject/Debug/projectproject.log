@@ -1,0 +1,28 @@
+﻿Build started 08.04.2014 07:58:39.
+     1>Project "C:\Users\Einar\Documents\Visual Studio 2012\Projects\projectproject\projectproject\projectproject.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Intersone.cpp Kunde.cpp Kunder.cpp
+         Kunder.cpp
+     1>c:\users\einar\documents\visual studio 2012\projects\projectproject\projectproject\const.h(6): warning C4305: 'initializing' : truncation from '__int64' to 'const int'
+     1>c:\users\einar\documents\visual studio 2012\projects\projectproject\projectproject\const.h(6): warning C4309: 'initializing' : truncation of constant value
+     1>c:\users\einar\documents\visual studio 2012\projects\projectproject\projectproject\const.h(12): warning C4305: 'initializing' : truncation from '__int64' to 'const int'
+     1>c:\users\einar\documents\visual studio 2012\projects\projectproject\projectproject\const.h(12): warning C4309: 'initializing' : truncation of constant value
+     1>c:\users\einar\documents\visual studio 2012\projects\projectproject\projectproject\kunder.cpp(22): error C2664: 'Kunde::Kunde(std::ifstream *,int)' : cannot convert parameter 1 from 'std::ifstream' to 'std::ifstream *'
+                 No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+         Generating Code...
+         Compiling...
+         Intersone.cpp
+         Generating Code...
+         Compiling...
+         Kunde.cpp
+     1>c:\users\einar\documents\visual studio 2012\projects\projectproject\projectproject\kunde.cpp(1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\einar\documents\visual studio 2012\projects\projectproject\projectproject\const.h(6): warning C4305: 'initializing' : truncation from '__int64' to 'const int'
+     1>c:\users\einar\documents\visual studio 2012\projects\projectproject\projectproject\const.h(6): warning C4309: 'initializing' : truncation of constant value
+     1>c:\users\einar\documents\visual studio 2012\projects\projectproject\projectproject\const.h(12): warning C4305: 'initializing' : truncation from '__int64' to 'const int'
+     1>c:\users\einar\documents\visual studio 2012\projects\projectproject\projectproject\const.h(12): warning C4309: 'initializing' : truncation of constant value
+         Generating Code...
+     1>Done Building Project "C:\Users\Einar\Documents\Visual Studio 2012\Projects\projectproject\projectproject\projectproject.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.23
