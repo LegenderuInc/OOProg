@@ -1,4 +1,4 @@
-#if !defined(__const_H)
+/*#if !defined(__const_H)
 #define __const_H
 
 const int MAX_TLF = 99999999;
@@ -16,4 +16,4 @@ const int MIN_GATE = 1;
 const int STRLEN = 80;
 
 
-#endif
+#endif*/

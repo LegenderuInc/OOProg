@@ -2,7 +2,6 @@
 #define __KUNDE_H
 
 #include "Globalevariabler.h"
-#include "const.h"
 #include "Bokst.h"
 #include "Intersone.h"
 

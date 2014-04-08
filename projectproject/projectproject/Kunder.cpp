@@ -12,8 +12,8 @@ Kunder::Kunder() {
 	 sistefil >> uselessJunk >> forsteK >> sistI;
 	 
     for (int i = forsteK; i <= sistI; i++) {
-        temp_filnavn = new char[(strlen(dta) + strlen(k) + 7 + 1)];
-        lagNavn(temp_filnavn, k, dta, i, 8);
+        temp_filnavn = new char[(strlen(".DTA") + strlen("K") + 7 + 1)];
+        lagNavn(temp_filnavn, "K", ".DTA", i, 8);
 
         ifstream innfil(temp_filnavn);
 
