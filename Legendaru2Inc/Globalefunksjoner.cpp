@@ -175,7 +175,7 @@ void SoneMeny {
     while (kommando != 'Q') {
         switch (kommando) {
         switch (kommando){
-            case 'D' : cout << "D";
+            case 'D' : cout << "S D";
                 break;
             default:
                 break;
@@ -193,11 +193,11 @@ void KundeMeny {
         switch (kommando){
             case 'D': display_kunde();
                 break;
-            case 'N':
+            case 'N': cout << "K N";
                 break;
-            case 'S':
+            case 'S': cout << "K S";
                 break;
-            case 'E':
+            case 'E': cout << "K E";
                 break;
             default:
                 break;
@@ -214,11 +214,11 @@ void EiendomMeny {
         switch (kommando) {
             case 'D': display_eiendom();
                 break;
-            case 'N':
+            case 'N': cout << "E N";
                 break;
-            case 'S':
+            case 'S': cout << "E S";
                 break;
-            case 'E':
+            case 'E': cout << "E E";
                 break;
             default:
                 break;
