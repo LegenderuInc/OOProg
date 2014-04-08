@@ -12,4 +12,5 @@ public:
 	Soner();
     void les_fra_fil(ifstream* inn, int n);
 	void add_sone();
+	void nytt_oppdrag();
 };

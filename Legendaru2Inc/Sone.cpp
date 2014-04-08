@@ -9,6 +9,7 @@ Sone::Sone(int siste) {
 	char* filNavn = new char[50];
 	lagNavn(filNavn, "SONE", ".DTA", siste, 7);
 	ofstream *utFil = new ofstream(filNavn);
+	*utFil << beskrivelse << endl;
 }
 
 
