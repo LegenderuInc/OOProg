@@ -8,16 +8,17 @@ using namespace std;
 #include "Soner.h
 
 Soner* soner;
+
 Kunder* kunder
 
 int main() {
-	soner = new Soner();
+    soner = new Soner();
     kunder = new Kunder();
 
     char kommando;
     skrivMeny();
     kommando = lesK();
-    
+
     while (kommando != 'Q') {
         switch (kommando) {
             case 'E': EiendomMeny();
@@ -28,7 +29,7 @@ int main() {
                 break;
             case 'U':
                 break;
-            default:    skrivMeny();
+            default: skrivMeny();
                 break;
         }
         kommando = lesK();
