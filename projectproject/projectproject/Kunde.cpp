@@ -14,9 +14,9 @@ Kunde::Kunde(int nr) : Num_element (nr){
     poststed = les_text("Sted");
     mail = les_text("mail");
 
-    telefon = les_tall("tlf", 10000000, 99999999);	//MIN_TLF, MAX_TLF
-    gateNr = les_tall("Gate nr", 1, 69);		//MIN_GATE, MAX_GATE
-    postKode = les_tall("Postadr", 100, 9999);		//MIN_POST, MAX_POST
+    telefon = les_tall("tlf", MIN_TLF, MAX_TLF);
+    gateNr = les_tall("Gate nr", MIN_GATE, MAX_GATE);
+    postKode = les_tall("Postadr", MIN_POST, MAX_POST);
 	}
 
 Kunde::Kunde(ifstream * infil, int nr) : Num_element(nr) {
