@@ -2,7 +2,7 @@
 
 
 Soner::Soner() {
-	siste = 0;
+siste = 0;
 	for (int i = 0; i < 100; i++) {
 		sonene[i] = NULL;
 	}
@@ -19,14 +19,32 @@ void Soner::add_sone() {
 
 
 void Soner::nytt_oppdrag() {
-	int soneNr = les_tall("Hvilken sone: ", 1, 100);
+	int soneNr = les_tall("\nHvilken sone: ", 1, 100);
 	if (sonene[soneNr] != NULL) {
-		cout << "yo";
+		cout << endl;
 		sonene[soneNr]->add_oppdrag();
 	}
 	else {
-		cout << "do";
+		cout << endl;
 		add_sone();
 		sonene[siste]->add_oppdrag();
+	}
+}
+
+void Soner::display_soneoppdrag(int n) {
+	if (sonene[n] != NULL) {
+		sonene[n]->display_list();
+	}
+	else {
+		cout << "\n\nAngitt sone eksisterer ikke.\n";
+	}
+}
+
+void Soner::display_oppdrag(int n) {
+	for (int i = 1; i <= 100; i++) {
+		if (sonene[i] != NULL) {	 // FIX Looper av en elle annen grunn en gang for mye.
+			sonene[i]->display_oppdrag(n);
+			
+		}
 	}
 }

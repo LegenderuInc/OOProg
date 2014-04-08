@@ -1,37 +1,165 @@
-#include<iostream>
-
-using namespace std;
-
-#include "const.h"
-#include "Globalefunksjoner.h"
+#include "Globalevariabler.h"
 #include "Eiendom.h"
-#include "Soner.h
+#include "Bolig.h"
+#include "Soner.h"
+#include "Sone.h"
+#include "Enum.h"
 
-Soner* soner;
-Kunder* kunder
+Soner* mSoner;
+
+
+
+//int main() {
+//	mSoner = new Soner();
+//	mSoner->add_sone();
+//	mSoner->nytt_oppdrag();
+//	/*mSoner->add_sone();*/
+//
+//
+//
+//	//mSoner->get_sone(1)->add_oppdrag();
+//
+//	
+//	
+//	/*Eiendom mEiendom(35672);
+//	mEiendom.skriv_til_fil();*/
+//
+//	//ifstream ifil("E00035672.DTA");
+//
+//	//Eiendom mEiendom2(&ifil,23);
+//
+//	//mEiendom2.skriv_til_fil();
+//
+//
+//
+//	////mEiendom2.skirv_til_fil(fil);23
+//
+//
+//
+//	system("pause");
+//}
+
+
+void eiendomMeny();
+void soneMeny();
+void kundeMeny();
+Sone* mSone;
 
 int main() {
-	soner = new Soner();
-    kunder = new Kunder();
+	mSoner = new Soner();
+	/*mSoner->nytt_oppdrag();
+	mSoner->nytt_oppdrag();
+	
+	mSoner->display_soneoppdrag(1);*/
+    
+
 
     char kommando;
     skrivMeny();
     kommando = lesK();
-    
+
     while (kommando != 'Q') {
         switch (kommando) {
-            case 'E': EiendomMeny();
+            case 'E': eiendomMeny();
                 break;
-            case 'S': SoneMeny();
+			case 'S': soneMeny();
                 break;
-            case 'K': KundeMeny();
+			case 'K': kundeMeny();
                 break;
             case 'U':
                 break;
-            default:    skrivMeny();
+            default: skrivMeny();
                 break;
         }
         kommando = lesK();
     }
     return 0;
+}
+
+
+
+
+
+
+
+
+
+
+void eiendomMeny() {
+
+	skrivMeny_Eiendom();
+
+    char kommando;
+    
+    kommando = lesK();
+    
+    while (kommando != 'Q') {
+        switch (kommando) {
+		case 'D': mSoner->display_oppdrag(12000);  // les tall i parameter
+            break;
+		case 'N': mSoner->nytt_oppdrag(); 
+            break;
+        case 'S':
+            break;
+        case 'E':
+            break;
+        default: skrivMeny_Eiendom();
+            break;
+        }
+		skrivMeny_Eiendom();
+		kommando = lesK();
+	}	
+}
+
+
+void kundeMeny() {
+
+	skrivMeny_Kunde();
+
+    char kommando;
+    
+    kommando = lesK();
+    
+    while (kommando != 'Q') {
+        switch (kommando) {
+            case 'D': 
+                break;
+			case 'N': 
+                break;
+            case 'S':
+                break;
+            case 'E':
+                break;
+            default:
+                break;
+        }
+    }
+}
+
+void soneMeny() {
+
+	skrivMeny_Sone();
+
+    char kommando;
+    
+    kommando = lesK();
+    
+    while (kommando != 'Q') {
+        switch (kommando) {
+		case 'D': mSoner->display_soneoppdrag(les_tall("\nAngi sonenummer: ", 1, 100)); 
+            break;
+		case 'N': 
+            break;
+        case 'S':
+            break;
+        case 'E':
+            break;
+		case 'Q': break;
+		default: skrivMeny_Sone();
+            break;
+
+        }
+		skrivMeny_Sone();
+		kommando = lesK();
+    }
 }

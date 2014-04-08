@@ -1,4 +1,4 @@
-#include"Globalefunksjoner.h"
+#include "Globalevariabler.h"
 #include "Sone.h"
 
 using namespace std;
@@ -13,4 +13,6 @@ public:
     void les_fra_fil(ifstream* inn, int n);
 	void add_sone();
 	void nytt_oppdrag();
+	void display_soneoppdrag(int n);
+	void display_oppdrag(int n);
 };

@@ -1,37 +1,61 @@
-#include"Kunder.h"
+#include "Kunder.h"
 
 using namespace std;
 
-Kunder::Kunder(){
+Kunder::Kunder() {
     char* temp_filnavn;
+	int uselessJunk;
     kundelist = new List(Sorted);
-    
-    for(int i = foersteKunde; i <= sistInnlagt; i++){
+
+	 ifstream sistefil("SISTE.DTA");
+
+	 sistefil >> uselessJunk >> forsteK >> sistI;
+	 
+    for (int i = forsteK; i <= sistI; i++) {
         temp_filnavn = new char[(strlen(dta) + strlen(k) + 7 + 1)];
         lagNavn(temp_filnavn, k, dta, i, 8);
-        
+
         ifstream innfil(temp_filnavn);
-        
-        if(innfil){
+
+        if (innfil) {
             Kunde * temp;
             temp = new Kunde(innfil, i);
             kundelist->add(temp);
-        }else{
+        } else {
             cout << "\nDance";
         }
     }
 }
 
-void Kunder::skriv_til_fil(ofstream* ut) {
-    getSisteInfo();
-	for(int i = foersteKunde; i < sistInnlagt; i++) {
-		char* filnavn;
-		lagNavn(filnavn, k, dta, i, 7);
-		ofstream utfil(filnavn);
-		if(utfil){
-			Kunde->skriv_til_fil(utfil*);
-		}
+Kunder::~Kunder(){
 
+}
+
+void Kunder::ny_kunde(){
+	Kunde * temp;
+	temp = new Kunde(++sistI);
+}
+
+
+
+void Kunder::skriv_til_fil() {
+    int listLen = 0;
+	Kunde* temp; 
+	
+	ofstream utfil("SISTE.DTA", ios::app);
+
+	utfil	<< forsteK << '\n' 
+			<< sistI << '\n';
+
+	if (!(kundelist->is_empty())){
+		listLen = kundelist->no_of_elements();
+		for(int i = 1; i <= listLen; i++){
+			temp = (Kunde*) kundelist->remove_no(i);
+			temp->skriv_til_fil();
+			kundelist->add(temp);
+		}
+	}else {
+		cout << "\nSer ut til at denne listen er tom :(";
 	}
 
 }

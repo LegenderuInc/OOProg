@@ -1,13 +1,13 @@
 #if !defined(__SONE_H)
 #define __SONE_H
-#include "Globalefunksjoner.h"
+#include "Globalevariabler.h"
 #include "Eiendom.h"
 #include "Bolig.h"
 
 
 class Sone {
 private:
-   	char* beskrivelse;
+    char* beskrivelse;
 	List* eiendomene;
     
 public:
@@ -15,7 +15,9 @@ public:
 	Sone(ifstream* inn);
 	void skriv_til_fil(ofstream* ut);
 	void add_oppdrag();
-	/*void display();*/
+	void display_list();
+	void display_oppdrag(int n);
+/*void display();*/
 };
 
 #endif

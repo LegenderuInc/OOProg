@@ -1,59 +1,58 @@
-#include <iostream>
 #include "Sone.h"
-#include "Globalefunksjoner.h"
+#include "Globalevariabler.h"
 
 Sone::Sone(int siste) {
-	cout << "hei";
-	beskrivelse = les_text("\nGi en kort beskrivelse av sonen: ");
-	eiendomene = new List(Sorted);
-	char* filNavn = new char[50];
-	lagNavn(filNavn, "SONE", ".DTA", siste, 7);
-	ofstream *utFil = new ofstream(filNavn);
-	*utFil << beskrivelse << endl;
+
+    beskrivelse = les_text("Gi en kort beskrivelse av sonen: ");
+    eiendomene = new List(Sorted);
+    char* filNavn = new char[50];
+    lagNavn(filNavn, "SONE", ".DTA", siste, 7);
+    ofstream *utFil = new ofstream(filNavn);
+    *utFil << beskrivelse << endl;
 }
 
+Sone::Sone(ifstream* inn) {
 
+ }
 
-Sone::Sone(ifstream & inn) {
-    beskrivelse = les_text(inn);
-    antEiendom = les_tall(inn);
-    
-    for(int i = 1; i <= antEiendom; i++){
-        eiendomlist -> new Eiendom(inn);
+void Sone::skriv_til_fil(ofstream * ut) {
+    Eiendom* temp;
+    *ut //<< number << "\n"
+            << beskrivelse << "\n";
+
+    int antEiendom = eiendomene->no_of_elements();
+    *ut << antEiendom << "\n";
+
+    for (int i = 1; i <= antEiendom; i++) {
+        temp = (Eiendom*) eiendomene->remove_no(i);
+        temp->skriv_til_fil();
+        eiendomene->add(temp);
     }
-
-Sone::Sone(ifstream* fil) {
-
-}
-void Sone::skriv_til_fil(ofstream* ut){
-	Eiendom* temp;
-	*ut //<< number << "\n"
-		<< beskrivelse << "\n";
-
-	int antEiendom = eiendomene->no_of_elements();
-	*ut << antEiendom << "\n";
-
-	for(int i = 1; i <= antEiendom; i++) {
-		temp = (Eiendom*)eiendomene->remove_no(i);
-		temp->skriv_til_fil();
-		eiendomene->add(temp);
-	}
 }
 
 void Sone::add_oppdrag() {
-	EiendomsType eiendomsType = les_eiendomstype();
+    EiendomsType eiendomsType = les_eiendomstype();
 
-	if (eiendomsType == tomt) {
-		Eiendom* temp;
-		temp = new Eiendom(12000); //FIX sitebrukt + 1
-		eiendomene->add(temp);
-	}
-	else {
-		Bolig* temp;
-		temp = new Bolig(23000, eiendomsType);  //FIX sistebrukt + 1
-		eiendomene->add(temp);
-	}
+    if (eiendomsType == tomt) {
+        Eiendom* temp;
+        temp = new Eiendom(12000); //FIX sitebrukt + 1
+        eiendomene->add(temp);
+    } else {
+        Bolig* temp;
+        temp = new Bolig(23000, eiendomsType); //FIX sistebrukt + 1
+        eiendomene->add(temp);
+    }
 }
 
+void Sone::display_list() {
+	eiendomene->display_list();
+}
+
+void Sone::display_oppdrag(int n) {
+	if (eiendomene->in_list(n)) {
+		eiendomene->display_element(n);
+	}
+	// FIX
+}
 
 
