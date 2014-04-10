@@ -17,7 +17,8 @@ public:
 	void add_oppdrag();
 	void display_list();
 	void display_oppdrag(int n);
-/*void display();*/
+	void fjernEiendom(int n);
+	bool listCheck(int n);
 };
 
 #endif

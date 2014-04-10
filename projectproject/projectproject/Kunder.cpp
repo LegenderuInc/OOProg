@@ -12,10 +12,10 @@ Kunder::Kunder() {
 	 sistefil >> uselessJunk >> forsteK >> sistI;
 	 
     for (int i = forsteK; i <= sistI; i++) {
-        temp_filnavn = new char[(strlen(".DTA") + strlen("K") + 7 + 1)];
+        temp_filnavn = new char[50];
         lagNavn(temp_filnavn, "K", ".DTA", i, 8);
 
-        ifstream innfil(temp_filnavn);
+		ifstream* innfil = new ifstream(temp_filnavn);
 
         if (innfil) {
             Kunde * temp;
@@ -34,6 +34,8 @@ Kunder::~Kunder(){
 void Kunder::ny_kunde(){
 	Kunde * temp;
 	temp = new Kunde(++sistI);
+	//Sammenlign funksjon kalles her.
+	kundelist->add(temp);
 }
 
 

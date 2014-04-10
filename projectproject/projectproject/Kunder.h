@@ -2,7 +2,6 @@
 #define __KUNDER_H
 #include"Globalevariabler.h"
 #include"const.h"
-#include"listtool2.h"
 #include"Kunde.h"
 
 using namespace std;
@@ -12,7 +11,7 @@ private:
 	int forsteK;
     int sistI;
     List* kundelist;
-private:
+public:
     Kunder();
     ~Kunder();
 	void ny_kunde();

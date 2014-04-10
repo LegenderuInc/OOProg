@@ -1,7 +1,9 @@
 #include <iostream>
 #include <cstring>
 #include "listtool2.h"
+#include "const.h"
 #include <fstream>
+#include "listtool2.h"
 #include "Enum.h"
 
 

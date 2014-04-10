@@ -16,17 +16,17 @@ InterSone::InterSone(int sonenr, int pris, int areal, int sove, int valg, int on
     type = (EiendomsType) eiendom;
 }
 
-InterSone::InterSone(ifstream & inn, int i) : Num_element(i) {
+InterSone::InterSone(ifstream * inn, int i) : Num_element(i) {
     int temp;
-    inn >> temp;
+    *inn >> temp;
     boliginfo = (Boliginfo) temp;
-    inn >> temp;
+    *inn >> temp;
     oenske = (Onske) temp;
-    inn >> temp;
+    *inn >> temp;
     type = (EiendomsType) temp;
-    inn >> maxPris;
-    inn >> minAreal;
-    inn >> minRom;
+    *inn >> maxPris;
+    *inn >> minAreal;
+    *inn >> minRom;
 }
 
 InterSone::~InterSone() {

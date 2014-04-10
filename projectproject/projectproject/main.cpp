@@ -4,40 +4,12 @@
 #include "Soner.h"
 #include "Sone.h"
 #include "Enum.h"
+#include "Kunder.h"
 
 Soner* mSoner;
+Kunder* mKunder;
 
 
-
-//int main() {
-//	mSoner = new Soner();
-//	mSoner->add_sone();
-//	mSoner->nytt_oppdrag();
-//	/*mSoner->add_sone();*/
-//
-//
-//
-//	//mSoner->get_sone(1)->add_oppdrag();
-//
-//	
-//	
-//	/*Eiendom mEiendom(35672);
-//	mEiendom.skriv_til_fil();*/
-//
-//	//ifstream ifil("E00035672.DTA");
-//
-//	//Eiendom mEiendom2(&ifil,23);
-//
-//	//mEiendom2.skriv_til_fil();
-//
-//
-//
-//	////mEiendom2.skirv_til_fil(fil);23
-//
-//
-//
-//	system("pause");
-//}
 
 
 void eiendomMeny();
@@ -47,12 +19,7 @@ Sone* mSone;
 
 int main() {
 	mSoner = new Soner();
-	/*mSoner->nytt_oppdrag();
-	mSoner->nytt_oppdrag();
-	
-	mSoner->display_soneoppdrag(1);*/
-    
-
+	mKunder = new Kunder();
 
     char kommando;
     skrivMeny();
@@ -98,8 +65,8 @@ void eiendomMeny() {
 		case 'D': mSoner->display_oppdrag(12000);  // les tall i parameter
             break;
 		case 'N': mSoner->nytt_oppdrag(); 
-            break;
-        case 'S':
+            break; 
+		case 'S': mSoner->slettEiendom();
             break;
         case 'E':
             break;
@@ -122,18 +89,20 @@ void kundeMeny() {
     
     while (kommando != 'Q') {
         switch (kommando) {
-            case 'D': 
-                break;
-			case 'N': 
-                break;
-            case 'S':
-                break;
-            case 'E':
-                break;
-            default:
-                break;
+		case 'D': // mKunder->display();
+            break;
+		case 'N': 
+            break;
+        case 'S':
+            break;
+        case 'E':
+            break;
+        default: skrivMeny_Kunde();
+            break;
         }
-    }
+		skrivMeny_Kunde();
+		kommando = lesK();
+	}
 }
 
 void soneMeny() {

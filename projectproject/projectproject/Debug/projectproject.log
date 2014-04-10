@@ -1,28 +1,33 @@
-﻿Build started 08.04.2014 07:58:39.
-     1>Project "C:\Users\Einar\Documents\Visual Studio 2012\Projects\projectproject\projectproject\projectproject.vcxproj" on node 2 (Build target(s)).
+﻿Build started 08.04.2014 08:34:33.
+     1>Project "C:\Users\Deadwinz\Documents\OOPROG\projectproject\projectproject\projectproject.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Intersone.cpp Kunde.cpp Kunder.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Bolig.cpp Eiendom.cpp Kunder.cpp Soner.cpp listtool2.cpp main.cpp
+         Soner.cpp
+     1>c:\users\deadwinz\documents\ooprog\projectproject\projectproject\const.h(6): warning C4305: 'initializing' : truncation from '__int64' to 'const int'
+     1>c:\users\deadwinz\documents\ooprog\projectproject\projectproject\const.h(6): warning C4309: 'initializing' : truncation of constant value
+     1>c:\users\deadwinz\documents\ooprog\projectproject\projectproject\const.h(12): warning C4305: 'initializing' : truncation from '__int64' to 'const int'
+     1>c:\users\deadwinz\documents\ooprog\projectproject\projectproject\const.h(12): warning C4309: 'initializing' : truncation of constant value
+         Generating Code...
+         Skipping... (no relevant changes detected)
+         main.cpp
+         listtool2.cpp
          Kunder.cpp
-     1>c:\users\einar\documents\visual studio 2012\projects\projectproject\projectproject\const.h(6): warning C4305: 'initializing' : truncation from '__int64' to 'const int'
-     1>c:\users\einar\documents\visual studio 2012\projects\projectproject\projectproject\const.h(6): warning C4309: 'initializing' : truncation of constant value
-     1>c:\users\einar\documents\visual studio 2012\projects\projectproject\projectproject\const.h(12): warning C4305: 'initializing' : truncation from '__int64' to 'const int'
-     1>c:\users\einar\documents\visual studio 2012\projects\projectproject\projectproject\const.h(12): warning C4309: 'initializing' : truncation of constant value
-     1>c:\users\einar\documents\visual studio 2012\projects\projectproject\projectproject\kunder.cpp(22): error C2664: 'Kunde::Kunde(std::ifstream *,int)' : cannot convert parameter 1 from 'std::ifstream' to 'std::ifstream *'
-                 No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
-         Generating Code...
-         Compiling...
-         Intersone.cpp
-         Generating Code...
-         Compiling...
-         Kunde.cpp
-     1>c:\users\einar\documents\visual studio 2012\projects\projectproject\projectproject\kunde.cpp(1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>c:\users\einar\documents\visual studio 2012\projects\projectproject\projectproject\const.h(6): warning C4305: 'initializing' : truncation from '__int64' to 'const int'
-     1>c:\users\einar\documents\visual studio 2012\projects\projectproject\projectproject\const.h(6): warning C4309: 'initializing' : truncation of constant value
-     1>c:\users\einar\documents\visual studio 2012\projects\projectproject\projectproject\const.h(12): warning C4305: 'initializing' : truncation from '__int64' to 'const int'
-     1>c:\users\einar\documents\visual studio 2012\projects\projectproject\projectproject\const.h(12): warning C4309: 'initializing' : truncation of constant value
-         Generating Code...
-     1>Done Building Project "C:\Users\Einar\Documents\Visual Studio 2012\Projects\projectproject\projectproject\projectproject.vcxproj" (Build target(s)) -- FAILED.
+         Eiendom.cpp
+         Bolig.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Deadwinz\Documents\OOPROG\projectproject\Debug\projectproject.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Deadwinz\Documents\OOPROG\projectproject\Debug\projectproject.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Deadwinz\Documents\OOPROG\projectproject\Debug\projectproject.lib" /MACHINE:X86 Debug\Bolig.obj
+         Debug\Eiendom.obj
+         Debug\Globalevariabler.obj
+         Debug\Intersone.obj
+         Debug\Kunde.obj
+         Debug\Kunder.obj
+         Debug\listtool2.obj
+         Debug\main.obj
+         Debug\Sone.obj
+         Debug\Soner.obj
+         projectproject.vcxproj -> C:\Users\Deadwinz\Documents\OOPROG\projectproject\Debug\projectproject.exe
+     1>Done Building Project "C:\Users\Deadwinz\Documents\OOPROG\projectproject\projectproject\projectproject.vcxproj" (Build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:01.23
+Time Elapsed 00:00:01.86

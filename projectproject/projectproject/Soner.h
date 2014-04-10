@@ -15,4 +15,5 @@ public:
 	void nytt_oppdrag();
 	void display_soneoppdrag(int n);
 	void display_oppdrag(int n);
+	void slettEiendom();
 };

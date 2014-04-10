@@ -80,8 +80,5 @@
     <ClInclude Include="Kunder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Bokst.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

@@ -74,7 +74,6 @@
     <ClCompile Include="Soner.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Bokst.h" />
     <ClInclude Include="Bolig.h" />
     <ClInclude Include="const.h" />
     <ClInclude Include="Eiendom.h" />

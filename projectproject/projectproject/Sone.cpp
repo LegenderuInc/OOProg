@@ -56,3 +56,15 @@ void Sone::display_oppdrag(int n) {
 }
 
 
+
+bool Sone::listCheck(int n){
+	return(eiendomene->in_list(n));
+}
+
+void Sone::fjernEiendom(int n){
+	Eiendom* temp;
+	temp = (Eiendom*) eiendomene->remove_no(n);
+	delete temp;
+}
+
+

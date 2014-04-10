@@ -17,7 +17,7 @@ private:
 
 public:
     InterSone();
-    InterSone(ifstream & inn, int i);
+    InterSone(ifstream* inn, int i);
 	InterSone(int sonenr, int pris, int areal, int sove, int valg, int onske, int eiendom);
     ~InterSone();
     void skriv_til_fil(ofstream & ut);
