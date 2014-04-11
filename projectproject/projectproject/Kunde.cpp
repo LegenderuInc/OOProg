@@ -121,7 +121,7 @@ void Kunde::sjekk_interesser(){
             temp_eiendomlist = temp_sone->get_list();
             for(int l = 1; l <= temp_eiendomlist->no_of_elements(); l++){
                 temp_eiendom = temp_eiendomlist->remove_no(l);
-                if(intSone->sammenling(temp_eiendom) == Ukentlig){
+                if(intSone->sammenling(temp_eiendom) == Ukentlig && skrivRaport == true){
                     add_ukentlig(temp_eiendom);
                 }else if(intSone->sammenling(temp_eiendom) == Snarest){
                     temp_eiendom->add_hurtig(temp_kundenr);

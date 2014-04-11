@@ -34,6 +34,9 @@ int main() {
 			case 'K': kundeMeny();
                 break;
             case 'U':
+                skrivRaport = true;
+                mKunder.skrivUkentlig();
+                skrivRaport = false;
                 break;
             default: skrivMeny();
                 break;

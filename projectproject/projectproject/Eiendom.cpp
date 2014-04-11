@@ -76,6 +76,7 @@ void Eiendom::skriv_ukentlig(char* filnavn) {
     
     utfil << "\nOppdrags nummer: " << oppdragsNr << "\n"
             << "Lag inn: " << datoInn << "\n"
+            << "Eiendoms type: " << eiendomsType << "\n"
             << "Pris antyding: " << pris << "\n"
             << "Tomtens areal: " << arealTomt << "\n"
             << "Adresse: " << gateAdr << " " << "\n"

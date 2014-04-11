@@ -4,6 +4,7 @@
 #include "listtool2.h"
 #include "Enum.h"
 #include "const.h"
+#include "Bokst.h"
 
 
 using namespace std;

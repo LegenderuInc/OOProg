@@ -11,5 +11,6 @@ char inf[] = ".INF";
 char sone[] = "SONE";
 char k[] = "K";
 char e[] = "E";
+bool skrivRaport = false;
 
 #endif

@@ -38,6 +38,14 @@ void Kunder::ny_kunde(){
 	kundelist->add(temp);
 }
 
+void Kunder::skrivUkentlig(){
+    Kunde * temp;
+    for(int i = 1; i <= sistI; i++){
+        temp = (Kunde*) kundelist->remove_no(i);        
+        temp->sjekk_interesser()
+        kundelist->add(temp);
+    }
+}
 
 
 void Kunder::skriv_til_fil() {

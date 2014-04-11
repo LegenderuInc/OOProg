@@ -18,6 +18,7 @@ public:
 	void display();
     void skriv_til_fil();
     void les_fra_fil(ifstream* inn, int i);
+    void skrivUkentlig();
 };
 
 #endif

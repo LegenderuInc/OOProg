@@ -31,3 +31,8 @@ int Bolig::get_boareal(){
 Onske Bolig::get_onske(){
     return oenske;
 }
+void Bolig::skriv_bolig_ukentlig(char* temp_filnavn){
+    ofstream utfil(temp_filnavn, ios::app);
+    
+    utfil << ""
+}
