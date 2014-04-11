@@ -21,7 +21,7 @@ public:
 	InterSone(int sonenr, int pris, int areal, int sove, int valg, int onske, int eiendom);
     ~InterSone();
     void skriv_til_fil(ofstream & ut);
-    int sammenling(Element* tilsendt);
+    Boliginfo sammenling(Element* tilsendt);
     int get_number();
 
 };

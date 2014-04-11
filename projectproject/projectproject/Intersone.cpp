@@ -35,55 +35,45 @@ InterSone::~InterSone() {
 }
 
 void InterSone::skriv_til_fil(ofstream & ut) {
-    ut << number	<< "\n"
-       << boliginfo << "\n"
-       << oenske	<< "\n"
-       << type		<< "\n"
-       << maxPris	<< "\n"
-       << minAreal	<< "\n"
-       << minRom	<< "\n";
+    ut << number << "\n"
+            << boliginfo << "\n"
+            << oenske << "\n"
+            << type << "\n"
+            << maxPris << "\n"
+            << minAreal << "\n"
+            << minRom << "\n";
 }
 
-int InterSone::get_number(){
+int InterSone::get_number() {
     return number;
 }
 
-    int InterSone::sammenling(Element* tilsendt){
-        Eiendom* temp_eiendom;
-        Bolig* temp_bolig;
-        int temp_tilbud;
-        
-        if(oenske == ukentlig ){
-            temp_tilbud = 1;
-        }
-        if(oenske == snarest){
-            temp_tilbud = 2;
-        }
-        
-        temp_eiendom = (Eiendom*)tilsendt;
-        if(temp_eiendom->get_eiendom() == type){
-        if(temp_eiendom->get_eiendom() == tomt ){
+Boliginfo InterSone::sammenling(Element* tilsendt) {
+    Eiendom* temp_eiendom;
+    Bolig* temp_bolig;
+  
+    temp_eiendom = (Eiendom*) tilsendt;
+    if (temp_eiendom->get_eiendom() == type) {
+        if (temp_eiendom->get_eiendom() == tomt) {
             cout << "\n Test, tomt";
-            if(maxPris < temp_eiendom->get_pris()){
-                if(minAreal > temp_eiendom->get_areal()){
-                    return temp_tilbud;
+            if (maxPris < temp_eiendom->get_pris()) {
+                if (minAreal > temp_eiendom->get_areal()) {
+                    return boliginfo;
                 }
             }
-        }else if(temp_eiendom ->get_eiendom() != tomt){
-            temp_bolig = (Bolig*)temp_eiendom;
-            if(maxPris > temp_bolig->get_pris()){
-                if(minAreal < temp_bolig->get_boareal()){
-                    if(minRom < temp_bolig->get_soverom()){
-                        if(temp_bolig->get_onske() == oenske || temp_bolig->get_onske == begge || oenske == begge){
-                            return temp_tilbud;
+        } else if (temp_eiendom ->get_eiendom() != tomt) {
+            temp_bolig = (Bolig*) temp_eiendom;
+            if (maxPris > temp_bolig->get_pris()) {
+                if (minAreal < temp_bolig->get_boareal()) {
+                    if (minRom < temp_bolig->get_soverom()) {
+                        if (temp_bolig->get_onske() == oenske || temp_bolig->get_onske == begge || oenske == begge) {
+                            return boliginfo;
                         }
                     }
-                    
                 }
             }
-        }else{
-            temp_tilbud = 0;
-            return temp_tilbud;
-        }
+        } else {
+            return NULL;
         }
     }
+}
