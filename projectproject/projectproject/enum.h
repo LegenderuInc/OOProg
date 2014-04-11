@@ -10,7 +10,7 @@ enum Onske {
 };
 
 enum Boliginfo {
-    ukentlig, snarest
+    Ukentlig, Snarest
 };
 
 #endif

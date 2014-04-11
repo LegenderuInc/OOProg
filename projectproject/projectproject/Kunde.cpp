@@ -121,10 +121,9 @@ void Kunde::sjekk_interesser(){
             temp_eiendomlist = temp_sone->get_list();
             for(int l = 1; l <= temp_eiendomlist->no_of_elements(); l++){
                 temp_eiendom = temp_eiendomlist->remove_no(l);
-                int svar = intSone->sammenlign(temp_eiendom);
-                if(svar = 1){
+                if(intSone->sammenlign(temp_eiendom) == Ukentlig){
                     temp_eiendom->add_ukentlig(temp_kundenr);
-                }else if(svar = 2){
+                }else if(intSone->sammenlign(temp_eiendom) == Snarest){
                     temp_eiendom->add_hurtig(temp_kundenr);
                 }else{
                     cout << "\nSer ut til at dette er ikke interesang for kunden";
