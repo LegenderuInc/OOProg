@@ -28,7 +28,7 @@ public:
     virtual void display();
 	void display_kunde();
     void sjekk_interesser();
-    
+    void add_ukentlig();
 
 };
 #endif

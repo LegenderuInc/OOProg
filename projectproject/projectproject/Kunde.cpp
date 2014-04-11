@@ -117,13 +117,13 @@ void Kunde::sjekk_interesser(){
         temp_interesse = (InterSone*) intSone->remove_no(i);
         temp_sone;// = /*mSoner.return_sone(temp_intereserte->get_number())*/;
         
-        if(temp_sone != NULL){
+        if(temp_sone){
             temp_eiendomlist = temp_sone->get_list();
             for(int l = 1; l <= temp_eiendomlist->no_of_elements(); l++){
                 temp_eiendom = temp_eiendomlist->remove_no(l);
-                if(intSone->sammenlign(temp_eiendom) == Ukentlig){
-                    temp_eiendom->add_ukentlig(temp_kundenr);
-                }else if(intSone->sammenlign(temp_eiendom) == Snarest){
+                if(intSone->sammenling(temp_eiendom) == Ukentlig){
+                    add_ukentlig(temp_eiendom);
+                }else if(intSone->sammenling(temp_eiendom) == Snarest){
                     temp_eiendom->add_hurtig(temp_kundenr);
                 }else{
                     cout << "\nSer ut til at dette er ikke interesang for kunden";
@@ -132,4 +132,33 @@ void Kunde::sjekk_interesser(){
         }
         
     }
+}
+
+void Kunde::add_ukentlig(Element* temp_element){
+    char* temp_filnavn;
+    Eiendom* temp_eiendom;
+    Bolig* temp_bolig;
+    lagNavn(temp_filnavn, k, inf, number, 8);
+    ifstream filsjekk(temp_filnavn);
+    temp_eiendom = (Eiendom*)temp_element;
+    
+    
+    if(filsjekk.is_open()){
+        ofstream utfil(temp_filnavn);
+        utfil << navn << "\n"
+              << "Telefon: \t" << telefon << "\n"
+              << "Adresse: \t" << adresse << " " << gateNr << "\n"
+              << "\t\t" << poststed << " " << postKode << "\n"
+              << "E-mail: \t" << mail << "\n"
+              << "\n\n Følgende eiendomer burde intresere dem. \n";
+    }
+    if(temp_eiendom->get_type() == tomt){
+        temp_eiendom->skriv_ukentlig(temp_filnavn);
+    }else{
+        temp_bolig = (Bolig*)temp_eiendom;
+        temp_bolig->skriv_ukentlig(temp_filnavn);
+        temp_bolig->skriv_bolig_ukentlig(temp_filnavn)
+    }
+       utfil << "\n----------------------------------------------------------";
+       
 }

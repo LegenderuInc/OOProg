@@ -71,6 +71,18 @@ void Eiendom::skriv_til_fil() {
     *utFil << beskrivelse << endl;
 }
 
+void Eiendom::skriv_ukentlig(char* filnavn) {
+    ofstream utfil(filnavn, ios::app);
+    
+    utfil << "\nOppdrags nummer: " << oppdragsNr << "\n"
+            << "Lag inn: " << datoInn << "\n"
+            << "Pris antyding: " << pris << "\n"
+            << "Tomtens areal: " << arealTomt << "\n"
+            << "Adresse: " << gateAdr << " " << "\n"
+            << "\t\t" << postAdr << "\n"
+            << "Tilleggsinfo om beligenheten: " << beskrivelse << "\n";
+}
+
 int Eiendom::get_eiendomsNr() {
 	return oppdragsNr;
 }
