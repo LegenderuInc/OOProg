@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include "Eiendom.h"
 
 Eiendom::Eiendom() {
@@ -10,6 +10,9 @@ Eiendom::Eiendom(ifstream* innFil, int n) : Num_element(n) {
     *innFil >> datoInn;
     *innFil >> bruksNr;
     *innFil >> intsaksb;
+	int eienType;
+	*innFil >> eienType;
+	eiendomsType == eienType;
     *innFil >> arealTomt;
     *innFil >> pris;
     innFil->ignore();
@@ -20,12 +23,13 @@ Eiendom::Eiendom(ifstream* innFil, int n) : Num_element(n) {
     beskrivelse = les_text(innFil);
 }
 
-Eiendom::Eiendom(int n) : Num_element(n) {
+Eiendom::Eiendom(int n, EiendomsType type) : Num_element(n) {
     oppdragsNr = n;
+	eiendomsType = type;
     cout << "\nAngi informasjon for eiendommen.";
     datoInn = 18102012;
     bruksNr = les_tall("\nBruksnummer: ", 1000, 9999);
-    intsaksb = les_tall("Nummer p� intern saksbehandler: ", 1, 10000);
+    intsaksb = les_tall("Nummer pï¿½ intern saksbehandler: ", 1, 10000);
     eier = les_text("Eierens navn: ");
     kommune = les_text("Kommune: ");
     postAdr = les_text("Postadresse og sted: ");
@@ -41,7 +45,8 @@ void Eiendom::display_eiendom() {
             << "\n\tBruksnummer: " << bruksNr << "\n\tIntern saktsbehandler: " << intsaksb
             << "\n\tEier: " << eier << "\n\tKommune: " << kommune << "\n\tPostadresse: " << postAdr
             << "\n\tGateadresse: " << gateAdr << "\n\tTomtens areal: " << arealTomt
-            << "\n\tPris: " << pris << "\n\tBeskrivelse: " << beskrivelse << endl << endl;;
+            << "\n\tPris: " << pris << "\n\tBeskrivelse: " << beskrivelse 
+			<< "\n\tEiendomstype: " << eiendomsType << endl;		
 }
 
 void Eiendom::display() {
@@ -56,6 +61,7 @@ void Eiendom::skriv_til_fil() {
     *utFil << datoInn << endl;
     *utFil << bruksNr << endl;
     *utFil << intsaksb << endl;
+	*utFil << eiendomsType << endl;
     *utFil << arealTomt << endl;
     *utFil << pris << endl;
     *utFil << eier << endl;
@@ -74,6 +80,19 @@ int Eiendom::get_postAdr() {
 	return 5;
 }
 
+int Eiendom::get_pris(){
+    return pris;
+}
+
+int Eiendom::get_areal(){
+    return arealTomt;
+}
+
 Eiendom::~Eiendom() {
 
 }
+
+EiendomsType Eiendom::get_eiendom(){
+    return eiendomsType;
+}
+

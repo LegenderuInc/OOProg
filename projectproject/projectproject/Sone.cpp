@@ -12,7 +12,7 @@ Sone::Sone(int siste) {
 }
 
 Sone::Sone(ifstream* inn) {
-
+	// DETTE MÅ GJØRES
  }
 
 void Sone::skriv_til_fil(ofstream * ut) {
@@ -35,11 +35,11 @@ void Sone::add_oppdrag() {
 
     if (eiendomsType == tomt) {
         Eiendom* temp;
-        temp = new Eiendom(12000); //FIX sitebrukt + 1
+		temp = new Eiendom(23000, eiendomsType); //FIX sitebrukt + 1
         eiendomene->add(temp);
     } else {
         Bolig* temp;
-        temp = new Bolig(23000, eiendomsType); //FIX sistebrukt + 1
+		temp = new Bolig(23000, eiendomsType); //FIX sistebrukt + 1
         eiendomene->add(temp);
     }
 }
@@ -66,5 +66,9 @@ void Sone::fjernEiendom(int n){
 	temp = (Eiendom*) eiendomene->remove_no(n);
 	delete temp;
 }
+
+
+
+
 
 

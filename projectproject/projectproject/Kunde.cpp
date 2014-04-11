@@ -21,11 +21,11 @@ Kunde::Kunde(int nr) : Num_element (nr){
     postKode = les_tall("Postadr", MIN_POST, MAX_POST);
 
 	temp_sone = les_tall("\nOppgi hvilken sone kunden er intresert i: ", MIN_SONE, MAX_SONE);
-	temp_pris = les_tall("Vennligst oppgi kundens maksimale prisnivå", MIN_ALL, MAX_ALL);
+	temp_pris = les_tall("Vennligst oppgi kundens maksimale prisnivï¿½", MIN_ALL, MAX_ALL);
 	temp_areal = les_tall("\nKundens minimumskrav for areal: ", MIN_ALL, MAX_ALL);
 	temp_rom = les_tall("\nKundens minimums krav for antall soverom: ", MIN_ALL, MAX_ALL);
-	temp_valg = les_tall("\nHvilken måte ønsker kunden å motta info om nye boliger? \n Ukentlig = 0, Snarest = 1.", 0, 1);
-	temp_onske =  les_tall("\nHva ønsker kunden å? \n Kjøpe = 0, Leie = 1, Beggedeler = 2", 0, 2);
+	temp_valg = les_tall("\nHvilken mï¿½te ï¿½nsker kunden ï¿½ motta info om nye boliger? \n Ukentlig = 0, Snarest = 1.", 0, 1);
+	temp_onske =  les_tall("\nHva ï¿½nsker kunden ï¿½? \n Kjï¿½pe = 0, Leie = 1, Beggedeler = 2", 0, 2);
 	temp_eiendom = les_tall("\nHvilken type eiendom\bolig er kunden intresert i? \nTomt = 0, Enebolig = 1, Rekkehus = 2, Leilighet = 3, Hytte = 4", 0, 4);
 
 	while(temp_sone != 0){
@@ -35,7 +35,7 @@ Kunde::Kunde(int nr) : Num_element (nr){
 			temp_class = new InterSone(temp_sone, temp_pris, temp_areal, temp_rom, temp_valg, temp_onske, temp_eiendom);
 			intSone -> add(temp_class);
 		}
-		temp_sone = les_tall("\nSkriv inn Sone nr. kunden er intresert i 1-100, \nSkriv inn 0 for å slutte.", 0, MAX_SONE)
+		temp_sone = les_tall("\nSkriv inn Sone nr. kunden er intresert i 1-100, \nSkriv inn 0 for ï¿½ slutte.", 0, MAX_SONE)
 	}
 }
 
@@ -104,4 +104,32 @@ void Kunde::display_kunde() {
 
 Kunde::~Kunde() {
 
+}
+
+void Kunde::sjekk_interesser(){
+    InterSone* temp_interesse;
+    Sone* temp_sone = NULL;
+    List* temp_eiendomlist = new List(Sorted);
+    Eiendom* temp_eiendom;
+    
+    for(int i = 1; i <= intSone->no_of_elements(); i++){
+        temp_interesse = (InterSone*) intSone->remove_no(i);
+        temp_sone;// = /*mSoner.return_sone(temp_intereserte->nr())*/;
+        
+        if(temp_sone != NULL){
+            temp_eiendomlist = temp_sone->get_list();
+            for(int l = 1; l <= temp_eiendomlist->no_of_elements(); l++){
+                temp_eiendom = temp_eiendomlist->remove_no(l);
+                int svar = intSone->sammenling(temp_eiendom);
+                if(svar = 1){
+                    temp_eiendom->add_ukentlig();
+                }else if(svar = 2){
+                    temp_eiendom->add_hurtig();
+                }else{
+                    cout << "\nSer ut til at dette er ikke interesang for kunden";
+                }
+            }
+        }
+        
+    }
 }

@@ -7,16 +7,19 @@
 
 class Bolig: public Eiendom {
 private:
-	int byggeAar;				// Året boligen ble bygd.
+	int byggeAar;				// Ã…ret boligen ble bygd.
 	int bruttoAreal;			// Boligens bruttoareal.
 	int boAreal;				// Boligens boareal.
 	int antSoverom;				// Antall soverom som finnes i boligen.
-	EiendomsType eiendomsType;	// Bolig type (tomt, eneblog osv).
+    Onske oenske;
 
 public:
 	Bolig();					// Default konstruktor.
-	Bolig(int i, EiendomsType t);				// Konstruktor som tar oppdragsnummer som parameter.
+	Bolig(int i, EiendomsType type);				// Konstruktor som tar oppdragsnummer som parameter.
 	virtual void display();
+    int get_soverom();
+    int get_boareal();
+    Onske get_onske();
 };
 
 #endif

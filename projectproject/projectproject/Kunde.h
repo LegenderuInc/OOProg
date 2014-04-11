@@ -1,7 +1,7 @@
 #if !defined(__KUNDE_H)
 #define __KUNDE_H
 
-#include "Globalevariabler.h"
+#include"Soner.h"
 #include "const.h"
 #include "Intersone.h"
 #include "Globalevariabler.h"
@@ -27,6 +27,7 @@ public:
     void skriv_til_fil();
     virtual void display();
 	void display_kunde();
+    void sjekk_interesser();
 
 };
 #endif

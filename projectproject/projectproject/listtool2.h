@@ -1,4 +1,4 @@
-﻿/*
+/*
 | FILE : LISTTOOL2.H
 |
 | AUTHOR : Frode Haug, H�gskolen i Gj�vik
