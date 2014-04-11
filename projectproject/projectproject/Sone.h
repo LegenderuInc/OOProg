@@ -19,6 +19,7 @@ public:
 	void display_oppdrag(int n);
 	void fjernEiendom(int n);
 	bool listCheck(int n);
+    List* get_list();
 };
 
 #endif

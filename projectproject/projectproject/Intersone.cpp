@@ -44,10 +44,14 @@ void InterSone::skriv_til_fil(ofstream & ut) {
        << minRom	<< "\n";
 }
 
-    void InterSone::sammenling(Element* tilsendt){
+int InterSone::get_number(){
+    return number;
+}
+
+    int InterSone::sammenling(Element* tilsendt){
         Eiendom* temp_eiendom;
         Bolig* temp_bolig;
-        int temp_tilbud, temp_return;
+        int temp_tilbud;
         
         if(oenske == ukentlig ){
             temp_tilbud = 1;

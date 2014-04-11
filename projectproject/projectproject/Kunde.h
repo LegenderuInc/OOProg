@@ -28,6 +28,7 @@ public:
     virtual void display();
 	void display_kunde();
     void sjekk_interesser();
+    
 
 };
 #endif
