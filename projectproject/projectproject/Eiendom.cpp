@@ -76,13 +76,49 @@ void Eiendom::skriv_ukentlig(char* filnavn) {
     
     utfil << "\nOppdrags nummer: " << oppdragsNr << "\n"
             << "Lag inn: " << datoInn << "\n"
-            << "Eiendoms type: " << eiendomsType << "\n"
-            << "Pris antyding: " << pris << "\n"
+            << "Eiendoms katerogi: ";
+    if(eiendomsType == 1) {
+        utfil << "Tomt \n";
+    }else if(eiendomsType == 2){
+        utfil << "Enebolig \n";
+    }else if(eiendomsType == 3){
+        utfil << "Rekkehus \n";
+    }else if(eiendomsType == 4){
+        utfil << "Leilighet \n";
+    }else if(eiendomsType == 5){
+        utfil << "Hytte \n";
+    }
+    utfil << "Pris antyding: " << pris << "\n"
             << "Tomtens areal: " << arealTomt << "\n"
             << "Adresse: " << gateAdr << " " << "\n"
             << "\t\t" << postAdr << "\n"
             << "Tilleggsinfo om beligenheten: " << beskrivelse << "\n";
 }
+
+void Eiendom::add_hurtig(char* kunde){
+    char* temp_filnavn;
+    lagNavn(temp_filnavn, e, inf, number, 8);
+    
+    ofstream utfil(temp_filnavn, ios::app);
+    
+    utfil << "\n" << kunde ;
+}
+
+void Eiendom::ny_sjekk(Element* tilsendt, int n){
+    Kunde* temp_kunde;
+    Eiendom* temp_eiendom;
+    List* temp_list = new List(Sorted);
+    
+    
+    temp_eiendom = (Eiendom*) tilsendt;
+    
+    temp_list = mKunder->return_list();
+    for(int i = 1; i <= temp_list->no_of_elements(); i++){
+        temp_kunde = (Kunde*)temp_list->remove_no(i);
+        temp_kunde->sjekk_interesser(temp_eiendom, n);
+            }
+        }
+        
 
 int Eiendom::get_eiendomsNr() {
 	return oppdragsNr;
@@ -108,4 +144,5 @@ Eiendom::~Eiendom() {
 EiendomsType Eiendom::get_eiendom(){
     return eiendomsType;
 }
+
 

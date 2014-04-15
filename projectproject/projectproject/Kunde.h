@@ -28,7 +28,9 @@ public:
     virtual void display();
 	void display_kunde();
     void sjekk_interesser();
+    void sjekk_interesser(Element* tilsendt, int n);
     void add_ukentlig();
-
+ 
+    
 };
 #endif

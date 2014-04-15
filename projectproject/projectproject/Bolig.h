@@ -17,7 +17,7 @@ public:
 	Bolig();					// Default konstruktor.
 	Bolig(int i, EiendomsType type);				// Konstruktor som tar oppdragsnummer som parameter.
 	virtual void display();
-    void skriv_bolig_ukentlig();
+    void skriv_bolig_ukentlig(char* temp_filnavn);
     int get_soverom();
     int get_boareal();
     Onske get_onske();

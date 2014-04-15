@@ -34,5 +34,8 @@ Onske Bolig::get_onske(){
 void Bolig::skriv_bolig_ukentlig(char* temp_filnavn){
     ofstream utfil(temp_filnavn, ios::app);
     
-    utfil << ""
+    utfil << "\nBrutto areal: " << bruttoAreal  << "\n"
+            << "Bygge år: " << byggeAar << "\n"
+            << "Boareal: " << boAreal << "\n"
+            << "Antall soverom: " << antSoverom << "\n";
 }

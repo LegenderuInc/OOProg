@@ -23,11 +23,13 @@ void Soner::nytt_oppdrag() {
 	if (sonene[soneNr] != NULL) {
 		cout << endl;
 		sonene[soneNr]->add_oppdrag();
+        sonene[soneNr]->sjekk_interesse(soneNr);
 	}
 	else {
 		cout << endl;
 		add_sone();
 		sonene[siste]->add_oppdrag();
+        sonene[siste]->sjekk_interesse(siste);
 	}
 }
 
@@ -53,7 +55,7 @@ void Soner::display_oppdrag(int n) {
 void Soner::slettEiendom(){
 	int input;
 
-	input = les_tall("\nOppgi oppdrags nummer på eiendomen du ønsker å slette: ", 1, 100000);
+	input = les_tall("\nOppgi oppdrags nummer pï¿½ eiendomen du ï¿½nsker ï¿½ slette: ", 1, 100000);
 	for(int i = 1; i <= MAX_SONE; i++){
 		if(sonene[i] != NULL){
 			if(sonene[i]->listCheck(input)){
@@ -66,5 +68,7 @@ void Soner::slettEiendom(){
 		}
 	} 
 }
+
+
 
 

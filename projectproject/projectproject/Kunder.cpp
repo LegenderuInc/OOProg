@@ -70,3 +70,6 @@ void Kunder::skriv_til_fil() {
 
 }
 
+List* Kunder::return_list(){
+    return kundelist;
+}

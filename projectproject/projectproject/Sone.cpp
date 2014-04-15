@@ -67,8 +67,17 @@ void Sone::fjernEiendom(int n){
 	delete temp;
 }
 
+void Sone::sjekk_interesse(int n){
+    Eiendom* temp_eiendom;
+        
+    temp_eiendom = (Eiendom*) eiendomene->remove_no(eiendomene->no_of_elements())
+    temp_eiendom->ny_sjekk(temp_eiendom, n);
+    eiendomene->add(temp_eiendom);
+}
 
-
+List* Sone::get_list(){
+    return eiendomene;
+}
 
 
 

@@ -28,14 +28,14 @@ Kunde::Kunde(int nr) : Num_element (nr){
 	temp_onske =  les_tall("\nHva �nsker kunden �? \n Kj�pe = 0, Leie = 1, Beggedeler = 2", 0, 2);
 	temp_eiendom = les_tall("\nHvilken type eiendom\bolig er kunden intresert i? \nTomt = 0, Enebolig = 1, Rekkehus = 2, Leilighet = 3, Hytte = 4", 0, 4);
 
-	while(temp_sone != 0){
+	while(temp_sone){
 		if(intSone->in_list(temp_sone){
 			cout << "\nDenne sonen er allerede lagt inn i interesse listen.";
 		}else{
 			temp_class = new InterSone(temp_sone, temp_pris, temp_areal, temp_rom, temp_valg, temp_onske, temp_eiendom);
 			intSone -> add(temp_class);
 		}
-		temp_sone = les_tall("\nSkriv inn Sone nr. kunden er intresert i 1-100, \nSkriv inn 0 for � slutte.", 0, MAX_SONE)
+		temp_sone = les_tall("\nSkriv inn Sone nr. kunden er intresert i 1-100, \nSkriv inn 0 for � slutte.", 0, MAX_SONE);
 	}
 }
 
@@ -110,21 +110,20 @@ void Kunde::sjekk_interesser(){
     InterSone* temp_interesse;
     Sone* temp_sone = NULL;
     List* temp_eiendomlist = new List(Sorted);
-    Element* temp_eiendom;
-    int temp_kundenr = number;
-    
+    Eiendom* temp_eiendom;
+        
     for(int i = 1; i <= intSone->no_of_elements(); i++){
         temp_interesse = (InterSone*) intSone->remove_no(i);
-        temp_sone;// = /*mSoner.return_sone(temp_intereserte->get_number())*/;
+        //temp_sone = mSoner.return_sone(temp_intereserte->get_number());
         
         if(temp_sone){
             temp_eiendomlist = temp_sone->get_list();
             for(int l = 1; l <= temp_eiendomlist->no_of_elements(); l++){
                 temp_eiendom = temp_eiendomlist->remove_no(l);
-                if(intSone->sammenling(temp_eiendom) == Ukentlig && skrivRaport == true){
+                if(temp_interesse->sammenling(temp_eiendom) == Ukentlig && skrivRaport == true){
                     add_ukentlig(temp_eiendom);
-                }else if(intSone->sammenling(temp_eiendom) == Snarest){
-                    temp_eiendom->add_hurtig(temp_kundenr);
+                }else if(temp_interesse->sammenling(temp_eiendom) == Snarest && skrivRaport == false){
+                    temp_eiendom->add_hurtig(number);
                 }else{
                     cout << "\nSer ut til at dette er ikke interesang for kunden";
                 }
@@ -132,6 +131,19 @@ void Kunde::sjekk_interesser(){
         }
         
     }
+}
+ 
+void Kunde::sjekk_interesser(Element* tilsendt, int n){
+    InterSone* temp_interesse;
+    Eiendom* temp_eiendom = tilsendt;
+    
+    if(intSone->in_list(n)){
+        temp_interesse = (InterSone*) intSone->remove(n);
+        if(temp_interesse->sammenling(temp_eiendom) == Snarest){
+            temp_eiendom->add_hurtig(number);
+        }
+    }
+    
 }
 
 void Kunde::add_ukentlig(Element* temp_element){
@@ -152,12 +164,13 @@ void Kunde::add_ukentlig(Element* temp_element){
               << "E-mail: \t" << mail << "\n"
               << "\n\n Følgende eiendomer burde intresere dem. \n";
     }
+    ofstream utfil(temp_filnavn);
     if(temp_eiendom->get_type() == tomt){
         temp_eiendom->skriv_ukentlig(temp_filnavn);
     }else{
         temp_bolig = (Bolig*)temp_eiendom;
         temp_bolig->skriv_ukentlig(temp_filnavn);
-        temp_bolig->skriv_bolig_ukentlig(temp_filnavn)
+        temp_bolig->skriv_bolig_ukentlig(temp_filnavn);
     }
        utfil << "\n----------------------------------------------------------";
        

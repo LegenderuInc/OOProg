@@ -18,6 +18,7 @@ public:
 	void display_list();
 	void display_oppdrag(int n);
 	void fjernEiendom(int n);
+    void sjekk_interesse(int n);
 	bool listCheck(int n);
     List* get_list();
 };

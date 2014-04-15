@@ -25,6 +25,8 @@ public:
     void display_eiendom(); // Skriver ut informasjon om tomten.
     void skriv_til_fil();
     void skriv_ukentlig(char* filnavn);
+    void add_hurtig(char* kunde);
+    void ny_sjekk(Element* tilsendt, int n);
 	int get_eiendomsNr();
 	int get_postAdr();
     int get_pris();
