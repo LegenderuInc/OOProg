@@ -1,6 +1,9 @@
 #if !defined(__EIENDOM_H)
 #define __EIENDOM_H
 #include "Globalevariabler.h"
+#include "Kunde.h"
+#include "Bokst.h"
+#include"Bolig.h"
 
 class Eiendom : public Num_element {
 private:
@@ -19,8 +22,8 @@ private:
 
 public:
     Eiendom(); // Default konstruktor
-	Eiendom(int n, EiendomsType type); // Konstruktor som tar oppdragsnummer som parameter.
-    Eiendom(ifstream* innFil, int n); // Konstuktor som brukes dersom det leses fra fil.
+	Eiendom(int n, int type); // Konstruktor som tar oppdragsnummer som parameter.
+    Eiendom(ifstream* innFil, int n, int type); // Konstuktor som brukes dersom det leses fra fil.
     virtual void display();
     void display_eiendom(); // Skriver ut informasjon om tomten.
     void skriv_til_fil();
@@ -30,6 +33,7 @@ public:
 	int get_eiendomsNr();
 	int get_postAdr();
     int get_pris();
+    int get_number();
     int get_areal();
     ~Eiendom(); // Destructor.
     EiendomsType get_eiendom();

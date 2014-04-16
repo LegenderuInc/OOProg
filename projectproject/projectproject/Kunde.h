@@ -1,10 +1,8 @@
 #if !defined(__KUNDE_H)
 #define __KUNDE_H
 
-#include"Soner.h"
-#include "const.h"
 #include "Intersone.h"
-#include "Globalevariabler.h"
+
 
 using namespace std;
 

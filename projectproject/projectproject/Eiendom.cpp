@@ -1,19 +1,16 @@
-#include <iostream>
 #include "Eiendom.h"
 
 Eiendom::Eiendom() {
 
 }
 
-Eiendom::Eiendom(ifstream* innFil, int n) : Num_element(n) {
-    *innFil >> oppdragsNr;
+Eiendom::Eiendom(ifstream* innFil, int n, int type) : Num_element(n) {
+    oppdragsNr = n;
+    eiendomsType = type;
     *innFil >> datoInn;
     *innFil >> bruksNr;
     *innFil >> intsaksb;
-	int eienType;
-	*innFil >> eienType;
-	eiendomsType == eienType;
-    *innFil >> arealTomt;
+	*innFil >> arealTomt;
     *innFil >> pris;
     innFil->ignore();
     eier = les_text(innFil);
@@ -23,9 +20,9 @@ Eiendom::Eiendom(ifstream* innFil, int n) : Num_element(n) {
     beskrivelse = les_text(innFil);
 }
 
-Eiendom::Eiendom(int n, EiendomsType type) : Num_element(n) {
+Eiendom::Eiendom(int n, int type) : Num_element(n) {
     oppdragsNr = n;
-	eiendomsType = type;
+	eiendomsType = (EiendomsType)type;
     cout << "\nAngi informasjon for eiendommen.";
     datoInn = 18102012;
     bruksNr = les_tall("\nBruksnummer: ", 1000, 9999);
@@ -37,7 +34,7 @@ Eiendom::Eiendom(int n, EiendomsType type) : Num_element(n) {
     arealTomt = les_tall("Areal: ", 0, 10000000);
     pris = les_tall("Pris: ", 0, 100000000);
     beskrivelse = les_text("Kort beskrivelse: ");
-    skriv_til_fil();
+    //skriv_til_fil();
 }
 
 void Eiendom::display_eiendom() {
@@ -53,23 +50,23 @@ void Eiendom::display() {
     display_eiendom();
 }
 
-void Eiendom::skriv_til_fil() {
+/*void Eiendom::skriv_til_fil() {
     char* filNavn = new char[50];
     lagNavn(filNavn, "E", ".DTA", oppdragsNr, 7);
     ofstream *utFil = new ofstream(filNavn);
     *utFil << oppdragsNr << endl;
+    *utFil << eiendomsType << endl;//Flyttet opp hit for enklere klargjøre om det er en eiendom eller en bolig.
     *utFil << datoInn << endl;
     *utFil << bruksNr << endl;
     *utFil << intsaksb << endl;
-	*utFil << eiendomsType << endl;
-    *utFil << arealTomt << endl;
+	*utFil << arealTomt << endl;
     *utFil << pris << endl;
     *utFil << eier << endl;
     *utFil << kommune << endl;
     *utFil << postAdr << endl;
     *utFil << gateAdr << endl;
     *utFil << beskrivelse << endl;
-}
+}*/
 
 void Eiendom::skriv_ukentlig(char* filnavn) {
     ofstream utfil(filnavn, ios::app);
@@ -135,6 +132,10 @@ int Eiendom::get_pris(){
 
 int Eiendom::get_areal(){
     return arealTomt;
+}
+
+int Eiendom::get_number(){
+    return number;
 }
 
 Eiendom::~Eiendom() {

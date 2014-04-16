@@ -1,7 +1,5 @@
 #include "Globalevariabler.h"
-//#include "Bokst.h"
-//#include "Kunde.h"
-//#include "Kunder.h"
+
 
 int les_tall(char* text, int min, int max) {
     int tall;
@@ -25,12 +23,12 @@ char lesK() {
 
 
 
-char* les_text(char* text) {
+char les_text(char* text) {
     char * data;
     cout << text;
-    char temp[50];
+    char temp[200];
     cin.ignore();
-    cin.getline(temp, 50);
+    cin.getline(temp, 200);
 
     data = new char[strlen(temp) + 1];
     strcpy(data, temp);

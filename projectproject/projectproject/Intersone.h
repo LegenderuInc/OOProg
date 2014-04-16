@@ -1,10 +1,8 @@
 #if !defined(__INTERSONE_H)
 #define __INTERSONE_H
 
-#include <iostream>
-#include "Enum.h"
-#include "listtool2.h"
-#include <fstream>
+#include "Globalevariabler.h"
+#include "Eiendom.h"
 
 using namespace std;
 

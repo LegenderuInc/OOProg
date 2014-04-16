@@ -8,7 +8,18 @@ siste = 0;
 	}
 }
 
-void Soner::les_fra_fil(ifstream* inn, int n){
+void Soner::les_fra_fil(){
+    char* temp_filnavn;
+    for(int i = 1; i <= MAX_SONE; i++){
+        lagNavn(temp_filnavn, sone, dta, i, 11); // Sjekk hvor stort dette blir..
+        ifstream innFil(temp_filnavn);
+        
+        if(innFil){
+            cout << "\nLeser i fra fil: " << temp_filnavn << "\n";
+            sonene[i] = new Sone(innFil);
+        }
+        cout << "\n 404 File not found.";
+    }
     
 }
 

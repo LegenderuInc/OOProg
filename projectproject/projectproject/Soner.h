@@ -1,4 +1,3 @@
-#include "Globalevariabler.h"
 #include "Sone.h"
 
 using namespace std;

@@ -1,7 +1,5 @@
 #if !defined(__KUNDER_H)
 #define __KUNDER_H
-#include"Globalevariabler.h"
-#include"const.h"
 #include"Kunde.h"
 
 using namespace std;

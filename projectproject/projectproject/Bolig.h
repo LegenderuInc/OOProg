@@ -1,11 +1,10 @@
 #if !defined(__Bolig_H)
 #define __Bolig_H
 
-#include "Globalevariabler.h"
 #include "Eiendom.h"
 
 
-class Bolig: public Eiendom {
+class Bolig : public Eiendom {
 private:
 	int byggeAar;				// Året boligen ble bygd.
 	int bruttoAreal;			// Boligens bruttoareal.

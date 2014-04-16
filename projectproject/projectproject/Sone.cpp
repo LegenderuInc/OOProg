@@ -1,5 +1,4 @@
 #include "Sone.h"
-#include "Globalevariabler.h"
 
 Sone::Sone(int siste) {
 
@@ -12,7 +11,30 @@ Sone::Sone(int siste) {
 }
 
 Sone::Sone(ifstream* inn) {
-	// DETTE MÅ GJØRES
+    eiendomene = new List(Sorted);
+    Eiendom* temp_eiendom;
+    Bolig* temp_bolig;
+    int temp_oppdrag, antEiendomer, temp_type;
+    char* filnavn;
+    
+	beskrivelse = les_text(inn);
+    antEiendomer = les_tall();
+    for (int i = 1; i <= antEiendomer; i++){
+        temp_oppdrag = les_tall(inn);
+        temp_type = les_tall(inn);
+        lagNavn(filnavn, e, dta, temp_oppdrag, 8);
+        ifstream innFil(filnavn);
+        if(temp_type == 0 && innFil.is_open()){
+        temp_eiendom = new Eiendom(innFil, temp_oppdrag, temp_type);
+        eiendomene->add(temp_eiendom);
+        delete temp_eiendom;
+        }else if(innFil){
+            temp_bolig = new Bolig(innFil, temp_oppdrag, temp_type);
+            eiendomene->add(temp_bolig);
+            delete temp_bolig;
+        }
+        innFil.close();
+    }
  }
 
 void Sone::skriv_til_fil(ofstream * ut) {
@@ -25,6 +47,8 @@ void Sone::skriv_til_fil(ofstream * ut) {
 
     for (int i = 1; i <= antEiendom; i++) {
         temp = (Eiendom*) eiendomene->remove_no(i);
+        *ut << temp->get_number() << "\n";
+        *ut << temp->get_eiendom() << "\n"; 
         temp->skriv_til_fil();
         eiendomene->add(temp);
     }

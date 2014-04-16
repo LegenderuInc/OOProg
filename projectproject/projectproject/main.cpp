@@ -6,8 +6,7 @@
 #include "Enum.h"
 #include "Kunder.h"
 
-Soner* mSoner;
-Kunder* mKunder;
+
 
 
 
