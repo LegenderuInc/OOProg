@@ -28,6 +28,7 @@ public:
     void sjekk_interesser();
     void sjekk_interesser(Element* tilsendt, int n);
     void add_ukentlig();
+    bool finn_navn(char* temp_navn);
  
     
 };

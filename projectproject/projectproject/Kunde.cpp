@@ -175,3 +175,12 @@ void Kunde::add_ukentlig(Element* temp_element){
        utfil << "\n----------------------------------------------------------";
        
 }
+
+bool Kunde::finn_navn(char* temp_navn){
+    if(strcmp(navn, temp_navn)){
+        return true;
+    }else{
+        return false;
+    }
+}
+

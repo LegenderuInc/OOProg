@@ -17,6 +17,7 @@ public:
     void skriv_til_fil();
     void les_fra_fil(ifstream* inn, int i);
     void skrivUkentlig();
+    void slettKunde();
     List* return_list();
 };
 
